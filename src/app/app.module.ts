@@ -2,6 +2,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
+import { GolfRoutingModule } from './golf-game/golf-routing.module';
+import { GolfModule } from './golf-game/golf.module';
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HomeComponent } from "./home/home.component";
@@ -20,9 +22,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 // import { MatMenuModule } from "@angular/material/menu";
 // import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { CourseSelectionComponent } from './golf-game/course-selection/course-selection.component';
-import { AmountOfUsersSelectionComponent } from './golf-game/amount-of-users-selection/amount-of-users-selection.component';
-import { GolfScorecardComponent } from './golf-game/golf-scorecard/golf-scorecard.component';
 // import { MatListModule } from "@angular/material/list";
 // import { MatGridListModule } from "@angular/material/grid-list";
 // import { MatCardModule } from "@angular/material/card";
@@ -45,14 +44,10 @@ import { GolfScorecardComponent } from './golf-game/golf-scorecard/golf-scorecar
     declarations: [
         AppComponent,
         HomeComponent,
-        NavBarComponent,
-        CourseSelectionComponent,
-        AmountOfUsersSelectionComponent,
-        GolfScorecardComponent
+        NavBarComponent
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         BrowserAnimationsModule,
         // MatCheckboxModule,
         // MatCheckboxModule,
@@ -84,7 +79,10 @@ import { GolfScorecardComponent } from './golf-game/golf-scorecard/golf-scorecar
         // MatSnackBarModule,
         // MatTableModule,
         // MatSortModule,
-        // MatPaginatorModule
+        // MatPaginatorModule,
+        GolfRoutingModule,
+        AppRoutingModule,
+        GolfModule
     ],
     bootstrap: [AppComponent]
 })
