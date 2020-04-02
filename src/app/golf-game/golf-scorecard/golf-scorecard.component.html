@@ -1,17 +1,3 @@
-<div id="flex" *ngIf="!amountOfUsers || !selectedCourse">
-    <div id="errors">
-        <div *ngIf="!selectedCourse">
-            Haven't selected a course!
-        </div>
-        <div *ngIf="!amountOfUsers">
-            Haven't set amount of players!
-        </div>
-    </div>
-</div>
-  
-
-<div *ngIf="amountOfUsers && selectedCourse">
-    <mat-card>
-        <mat-card-title>{{ selectedCourse.name }}</mat-card-title>
-    </mat-card>
-</div>
+<mat-card>
+    <mat-card-title>{{ selectedCourse.name }}</mat-card-title>
+</mat-card>

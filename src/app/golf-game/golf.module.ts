@@ -7,12 +7,14 @@ import { MatCardModule } from "@angular/material/card";
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { SharedModule } from '../shared/shared/shared.module';
+import { TeeSelectionComponent } from './tee-selection/tee-selection.component';
 
 @NgModule({
   declarations: [
     CourseSelectionComponent,
     AmountOfUsersSelectionComponent,
-    GolfScorecardComponent
+    GolfScorecardComponent,
+    TeeSelectionComponent
   ],
   imports: [
     CommonModule,

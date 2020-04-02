@@ -14,6 +14,6 @@ export class AmountOfUsersSelectionComponent implements OnInit {
 
   setAmountOfUsers(amount: number) {
     this.golfService.setAmountOfUsers(amount);
-    this.router.navigateByUrl('/current-game');
+    this.router.navigateByUrl('/tee-selection');
   }
 }
