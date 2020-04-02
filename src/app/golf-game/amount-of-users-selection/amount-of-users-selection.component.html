@@ -1,1 +1,15 @@
-<p>amount-of-users-selection works!</p>
+<div id="flex">
+    <mat-card id="mat-card">
+        <mat-card-title>How many people will be playing?</mat-card-title>
+        <mat-card-content id="mat-card-content">
+            <div>
+                <button mat-raised-button (click)="setAmountOfUsers(1)">1</button>
+                <button mat-raised-button (click)="setAmountOfUsers(2)">2</button>
+            </div>
+            <div>
+                <button mat-raised-button (click)="setAmountOfUsers(3)">3</button>
+                <button mat-raised-button (click)="setAmountOfUsers(4)">4</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

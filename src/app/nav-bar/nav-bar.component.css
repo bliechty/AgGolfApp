@@ -10,5 +10,5 @@ span {
 #right {
     display: flex;
     justify-content: space-between;
-    width: 125px;
+    width: 600px;
 }

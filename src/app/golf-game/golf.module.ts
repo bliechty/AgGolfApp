@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
     HttpClientModule,
     MatButtonModule,
     MatSelectModule
-  ]
+  ],
+  exports: [MatButtonModule]
 })
 export class GolfModule { }

@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Data } from '@angular/router';
 import { Course } from '../interfaces/course';
 import { TopLevel } from '../interfaces/toplevel';
+import { Data } from '../interfaces/data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GolfService {
   selectedCourse: Data;
+  amountOfUsers: number;
 
   constructor(private http: HttpClient) { }
 
@@ -27,10 +28,14 @@ export class GolfService {
         map((obj: TopLevel) => {
             return obj.data;
         })
-    );
+    )
   }
 
   setSelectedCourse(course: Data): void {
     this.selectedCourse = course;
+  }
+
+  setAmountOfUsers(amount: number): void {
+    this.amountOfUsers = amount;
   }
 }

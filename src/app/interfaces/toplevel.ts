@@ -1,5 +1,5 @@
 import { Course } from './course';
-import { Data } from '@angular/router';
+import { Data } from './data';
 
 export interface TopLevel {
     courses?: Course[];
