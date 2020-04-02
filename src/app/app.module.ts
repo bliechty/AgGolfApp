@@ -10,6 +10,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SharedModule } from './shared/shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
         MatToolbarModule,
         GolfRoutingModule,
         AppRoutingModule,
-        GolfModule
+        GolfModule,
+        SharedModule
     ],
     bootstrap: [AppComponent]
 })

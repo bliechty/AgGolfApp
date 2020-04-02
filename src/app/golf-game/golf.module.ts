@@ -5,8 +5,8 @@ import { AmountOfUsersSelectionComponent } from './amount-of-users-selection/amo
 import { GolfScorecardComponent } from './golf-scorecard/golf-scorecard.component';
 import { MatCardModule } from "@angular/material/card";
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { SharedModule } from '../shared/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
     CommonModule,
     MatCardModule,
     HttpClientModule,
-    MatButtonModule,
-    MatSelectModule
-  ],
-  exports: [MatButtonModule]
+    MatSelectModule,
+    SharedModule
+  ]
 })
 export class GolfModule { }

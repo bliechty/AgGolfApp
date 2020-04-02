@@ -1,0 +1,18 @@
+#errors div {
+    background-color: #424242;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+#flex {
+    display: flex;
+    justify-content: center;
+    margin-top: 95px;
+}
