@@ -1,0 +1,46 @@
+import { Hole } from './hole';
+
+export interface Data {
+  id: string;
+  includes: string;
+  courseId: number;
+  statusId: number;
+  status: string;
+  courseTypeId: number;
+  courseType: string;
+  practiceAreaId: number;
+  measurementTypeId: number;
+  measurementType: string;
+  mediaId: number;
+  holeCount: number;
+  lat: number;
+  lng: number;
+  popularityOneWeek: number;
+  popularityThreeMonth: number;
+  distanceFromMeKilometers: number;
+  distanceFromMeMiles: number;
+  localRankOneWeek: number;
+  localRankThreeMonth: number;
+  globalRankOneWeek: number;
+  globalRankThreeMonth: number;
+  localMaxRank: number;
+  globalMaxRank: number;
+  name: string;
+  addr1: string;
+  addr2: null;
+  city: string;
+  stateOrProvince: string;
+  country: string;
+  zipCode: string;
+  phone: string;
+  website: string;
+  courseDesigner: null;
+  courseArchitect: null;
+  accomodations: null;
+  hours: null;
+  fax: null;
+  fees: null;
+  description: null;
+  thumbnail: string;
+  holes: Hole[];
+}

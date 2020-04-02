@@ -1,0 +1,18 @@
+#mat-card {
+    text-align: center;
+    margin: 20px 0;
+    width: 200px;
+}
+
+#mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
