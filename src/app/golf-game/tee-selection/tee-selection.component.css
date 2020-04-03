@@ -1,0 +1,10 @@
+#tee-selection-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#tee-selection {
+    display: flex;
+    flex-direction: column;
+}
