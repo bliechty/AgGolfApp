@@ -1,11 +1,11 @@
 <div id="tee-selection-container">
     <div id="tee-selection">
         <mat-form-field>
-            <mat-select placeholder="Tee Selection" (selectionChange)="onSelectChange()">
+            <mat-select placeholder="Tee Selection" (selectionChange)="onSelectChange()" #select>
                 <mat-option value="testing">Testing stuff</mat-option>
                 <mat-option value="testing1">Testing stuff1</mat-option>
             </mat-select>
         </mat-form-field>
-        <button mat-raised-button [disabled]="valueNotSelected" (click)="goToScorecard()">Generate Golf Scorecard</button>
+        <button mat-raised-button [disabled]="valueNotSelected" (click)="goToScorecard(select.value)">Generate Golf Scorecard</button>
     </div>
 </div>

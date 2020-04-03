@@ -10,10 +10,7 @@ import { Data } from '../interfaces/data';
   providedIn: 'root'
 })
 export class GolfService {
-  selectedCourse: Data;
-  amountOfUsers: number;
-
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
   getCoursesObservable(): Observable<Course[]> {
     return this.http.get('https://golf-courses-api.herokuapp.com/courses').pipe(
@@ -29,13 +26,5 @@ export class GolfService {
             return obj.data;
         })
     )
-  }
-
-  setSelectedCourse(course: Data): void {
-    this.selectedCourse = course;
-  }
-
-  setAmountOfUsers(amount: number): void {
-    this.amountOfUsers = amount;
   }
 }

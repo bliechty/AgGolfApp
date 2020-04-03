@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
 @Component({
   selector: 'app-tee-selection',
@@ -10,7 +11,8 @@ export class TeeSelectionComponent implements OnInit {
   valueNotSelected: boolean = true;
 
   constructor(
-      private router: Router
+      private router: Router,
+      @Inject(LOCAL_STORAGE) private storage: StorageService
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +24,8 @@ export class TeeSelectionComponent implements OnInit {
     }
   }
 
-  goToScorecard(): void {
+  goToScorecard(value: string): void {
+    this.storage.set("selectedTee", value);
     this.router.navigateByUrl('current-game');
   }
 }
