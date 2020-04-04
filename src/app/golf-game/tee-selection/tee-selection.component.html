@@ -1,10 +1,13 @@
 <div id="tee-selection-container" *ngIf="teeOptions.length !== 0">
-    <div id="tee-selection">
-        <mat-form-field>
+    <div>
+        <mat-card id="tee-selection">
+          <mat-card-title>What tee do you want?</mat-card-title>
+          <mat-form-field>
             <mat-select placeholder="Tee Selection" (selectionChange)="onSelectChange()" #select>
-                <mat-option *ngFor="let option of teeOptions" [value]="option">{{ option }}</mat-option>
+                <mat-option *ngFor="let option of teeOptions; let i=index" [value]="i">{{ option }}</mat-option>
             </mat-select>
         </mat-form-field>
         <button mat-raised-button [disabled]="valueNotSelected" (click)="goToScorecard(select.value)">Generate Golf Scorecard</button>
+        </mat-card>
     </div>
 </div>
