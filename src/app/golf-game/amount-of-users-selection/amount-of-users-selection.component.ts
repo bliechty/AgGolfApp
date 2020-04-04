@@ -1,7 +1,6 @@
-import { Component, OnInit, Inject } from "@angular/core";
-import { GolfService } from "../golf.service";
+import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
-import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { GolfService } from '../golf.service';
 
 @Component({
   selector: "app-amount-of-users-selection",
@@ -11,13 +10,14 @@ import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 export class AmountOfUsersSelectionComponent implements OnInit {
   constructor(
     private router: Router,
-    @Inject(LOCAL_STORAGE) private storage: StorageService
+    private golfService: GolfService
   ) {}
 
   ngOnInit(): void {}
 
   setAmountOfUsers(amount: number) {
-    this.storage.set("amountOfUsers", amount);
-    this.router.navigateByUrl('/tee-selection');
+    this.golfService.writeToUserInputByName('amountOfUsers', amount).then(_ => {
+      this.router.navigateByUrl('/tee-selection');
+    });
   }
 }

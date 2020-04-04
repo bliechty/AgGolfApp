@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "aggolfapp"
+  },
+  "targets": {
+    "aggolfapp": {
+      "hosting": {
+        "AgGolfApp": [
+          "aggolfapp"
+        ]
+      }
+    }
   }
 }

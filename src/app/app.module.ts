@@ -11,7 +11,6 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SharedModule } from './shared/shared/shared.module';
-import { StorageServiceModule } from 'ngx-webstorage-service';
 
 @NgModule({
     declarations: [
@@ -26,8 +25,7 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
         GolfRoutingModule,
         AppRoutingModule,
         GolfModule,
-        SharedModule,
-        StorageServiceModule
+        SharedModule
     ],
     bootstrap: [AppComponent]
 })

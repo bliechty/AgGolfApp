@@ -1,9 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GolfService } from '../golf.service';
 import { Router } from '@angular/router';
 import { Course } from 'src/app/interfaces/course';
-import { StorageService, LOCAL_STORAGE } from 'ngx-webstorage-service';
 
 @Component({
   selector: 'app-course-selection',
@@ -15,8 +14,7 @@ export class CourseSelectionComponent implements OnInit {
 
   constructor(
       private golfService: GolfService,
-      private router: Router,
-      @Inject(LOCAL_STORAGE) private storage: StorageService
+      private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -29,8 +27,9 @@ export class CourseSelectionComponent implements OnInit {
     
   selectCourse(id: number): void {
     this.golfService.getCourseObservableById(id).subscribe(course => {
-      this.storage.set("selectedCourse", course);
-      this.router.navigateByUrl('/amount-of-users');
+      this.golfService.writeToUserInputByName('selectedCourse', course).then(_ => {
+        this.router.navigateByUrl('/amount-of-users');
+      });
     });
   }
 }

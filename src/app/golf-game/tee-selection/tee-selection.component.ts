@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { GolfService } from '../golf.service';
 
 @Component({
   selector: 'app-tee-selection',
@@ -9,13 +9,21 @@ import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 })
 export class TeeSelectionComponent implements OnInit {
   valueNotSelected: boolean = true;
+  teeOptions: string[] = [];
 
   constructor(
       private router: Router,
-      @Inject(LOCAL_STORAGE) private storage: StorageService
+      private golfService: GolfService
   ) { }
 
   ngOnInit(): void {
+    this.golfService.getUserInputObservable().subscribe(data => {
+      for (let teeBox of data.selectedCourse.holes[0].teeBoxes) {
+        if (teeBox.teeType !== "auto change location") {
+          this.teeOptions.push(teeBox.teeType);
+        }
+      }
+    });
   }
 
   onSelectChange(): void {
@@ -24,8 +32,9 @@ export class TeeSelectionComponent implements OnInit {
     }
   }
 
-  goToScorecard(value: string): void {
-    this.storage.set("selectedTee", value);
-    this.router.navigateByUrl('current-game');
+  goToScorecard(value: string): void {  
+    this.golfService.writeToUserInputByName('teeSelection', value).then(_ => {
+      this.router.navigateByUrl('current-game');
+    });
   }
 }
