@@ -17,7 +17,19 @@ export class AmountOfUsersSelectionComponent implements OnInit {
 
   setAmountOfUsers(amount: number) {
     this.golfService.writeToUserInputByName('amountOfUsers', amount).then(_ => {
-      this.router.navigateByUrl('/tee-selection');
+      const players = [];
+      for (let i = 0; i < amount; i ++) {
+        players.push({
+          name: `player${i + 1}`,
+          display: false,
+          inScores: [],
+          outScores: [],
+          totalScores: []
+        });
+      }
+      this.golfService.writeToPlayerData(players).then(_ => {
+        this.router.navigateByUrl('/tee-selection');
+      })
     });
   }
 }

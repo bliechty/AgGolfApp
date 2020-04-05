@@ -1,7 +1,3 @@
-import { PlayerCollection } from './model';
-
-let players;
-
 export function displayHoles (numberOfHoles) {
     $('.player-total-score-container').html('');
     $('.score-card').css('display', 'block');
@@ -36,25 +32,20 @@ export function displayHoles (numberOfHoles) {
 }
 
 export function displayScoreCardInfo (numberOfHoles, numberOfPlayers) {
-    players = new PlayerCollection();
-    for (let i = 1; i <= numberOfPlayers; i++) {
-        players.add(`player${i}`);
-    }
-
     for (let i = 1; i <= numberOfPlayers; i++) {
         $('#first-column').append(`<input type='text' class='firstColumn playerName' placeholder='Player ${i} (Click to edit)'
-            onkeyup='enterPlayerName(event, this, ${i - 1}, ${numberOfHoles})' onblur='loseFocus(this)'>`);
+            (keyup)='enterPlayerName(event, this, ${i - 1}, ${numberOfHoles})' (blur)='loseFocus(this)'>`);
 
         for (let j = 1; j <= numberOfHoles / 2; j++) {
             $(`#col${j}`).append(`<input type='text' id='p${i}h${j}' class='boxes playerScore'
-                onkeyup='enterScore(event, this, ${i}, ${j - 1}, ${numberOfHoles})' onblur='loseFocus(this)'>`);
+                (keyup)='enterScore(event, this, ${i}, ${j - 1}, ${numberOfHoles})' (blur)='loseFocus(this)'>`);
         }
 
         $('#out-score').append(`<div id='outscore${i}' class='score-boxes'></div>`);
 
         for (let j = numberOfHoles / 2 + 1; j <= numberOfHoles; j++) {
             $(`#col${j}`).append(`<input type='text' id='p${i}h${j}' class='boxes playerScore'
-                onkeyup='enterScore(event, this, ${i}, ${j - 1}, ${numberOfHoles})' onblur='loseFocus(this)'>`);
+                (keyup)='enterScore(event, this, ${i}, ${j - 1}, ${numberOfHoles})' (blur)='loseFocus(this)'>`);
         }
 
         $('#in-score').append(`<div id='inscore${i}' class='score-boxes'></div>`);
@@ -136,47 +127,4 @@ export function displayYardage(holesArray, numberOfHoles, tee) {
 
   $('.yardage').append(`<div class='score-boxes'>${inYards}</div>`);
   $('.yardage').append(`<div class='score-boxes'>${totalYards}</div>`);
-}
-
-function enterPlayerName(e, el, playerIndex, numberOfHoles) {
-    $('.error').css('display', 'none');
-    $('.error').html('');
-    if (e.which === 13) {
-        if ($(el).val() === '') {
-            $('.error').css('display', 'block');
-            $('.error').html('Name cannot be empty');
-        } else if (players.duplicate($(el).val())) {
-            $('.error').css('display', 'block');
-            $('.error').html('Duplicate name, try again');
-        } else {
-            players.collection[playerIndex].name = $(el).val();
-            $(el).attr('placeholder', `${$(el).val()}`);
-            players.collection[playerIndex].isFinished(numberOfHoles, playerIndex + 1);
-        }
-        $(el).val('');
-    }
-}
-
-function loseFocus(el) {
-    $(el).val('');
-    $('.error').css('display', 'none');
-    $('.error').html('');
-}
-
-function enterScore(e, el, playerNum, holeNum, numOfHoles) {
-    $('.error').css('display', 'none');
-    $('.error').html('');
-    if (e.which === 13) {
-        let numInput = Number($(el).val());
-        if (Number.isInteger(numInput) && numInput > 0) {
-            players.collection[playerNum - 1].updateScores(playerNum, holeNum, numInput, numOfHoles);
-            $(el).attr('placeholder', numInput);
-            $(el).val('');
-            players.collection[playerNum - 1].isFinished(numOfHoles, playerNum);
-        } else {
-            $(el).val('');
-            $('.error').css('display', 'block');
-            $('.error').html('That is not a valid input');
-        }
-    }
 }

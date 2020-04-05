@@ -6,7 +6,8 @@ import { Course } from '../interfaces/course';
 import { TopLevel } from '../interfaces/toplevel';
 import { Data } from '../interfaces/data';
 import { User } from '../interfaces/user';
-import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Player } from '../interfaces/player';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class GolfService {
   ) { }
 
   getCoursesObservable(): Observable<Course[]> {
-    return this.http.get('https://golf-courses-api.herokuapp.com/courses').pipe(
+    return this.http.get<TopLevel>('https://golf-courses-api.herokuapp.com/courses').pipe(
         map((obj: TopLevel) => {
             return obj.courses;
         })
@@ -26,7 +27,7 @@ export class GolfService {
   }
 
   getCourseObservableById(id: number): Observable<Data> {
-    return this.http.get(`https://golf-courses-api.herokuapp.com/courses/${id}`).pipe(
+    return this.http.get<TopLevel>(`https://golf-courses-api.herokuapp.com/courses/${id}`).pipe(
         map((obj: TopLevel) => {
             return obj.data;
         })
@@ -41,5 +42,17 @@ export class GolfService {
     const userObj = {}
     userObj[key] = value;
     return this.db.collection('user-input').doc<User>('1JqzeoKuTBHew0tVfSCq').update(userObj);
+  }
+
+  writeToPlayerData(players): Promise<void> {
+    return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').set({ players });
+  }
+
+  getPlayerData(): Observable<Player[]> {
+    return this.db.collection('players-data').doc<TopLevel>('2DpTcsjam07ZyB3dm9tG').valueChanges().pipe(
+      map((obj: TopLevel) => {
+        return obj.players
+      })
+    );
   }
 }
