@@ -10,7 +10,7 @@ import { Course } from 'src/app/interfaces/course';
   styleUrls: ['./course-selection.component.css']
 })
 export class CourseSelectionComponent implements OnInit {
-  course$: Observable<Course[]>
+  courses: Course[];
 
   constructor(
       private golfService: GolfService,
@@ -22,7 +22,9 @@ export class CourseSelectionComponent implements OnInit {
   }
 
   getCourses(): void {
-    this.course$ = this.golfService.getCoursesObservable();
+    this.golfService.getCoursesObservable().subscribe(courses => {
+      this.courses = courses;
+    });
   }
     
   selectCourse(id: number): void {

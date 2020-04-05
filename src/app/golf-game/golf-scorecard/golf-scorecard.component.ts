@@ -10,6 +10,7 @@ import {
 } from "../../scripts/action";
 import { Hole } from "src/app/interfaces/hole";
 import { Player } from "src/app/interfaces/player";
+import * as angular from 'angular';
 
 @Component({
   selector: "app-golf-scorecard",

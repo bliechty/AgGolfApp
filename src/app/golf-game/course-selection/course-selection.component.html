@@ -1,13 +1,19 @@
 <div id="flex">
-    <mat-card *ngFor="let course of course$ | async" id="mat-card">
+    <mat-card *ngFor="let course of courses" id="mat-card">
         <mat-card-content id="mat-card-content">
             <mat-card-title>{{ course.name }}</mat-card-title>
             <div>
                 <img [src]="course.image" width="200" />
             </div>
             <div>
-                <button mat-raised-button (click)="selectCourse(course.id)">Select</button>
+                <button mat-raised-button (click)="selectCourse(course.id)">
+                    Select
+                </button>
             </div>
         </mat-card-content>
     </mat-card>
+</div>
+
+<div id="flex-spinner" *ngIf="!courses">
+    <mat-spinner></mat-spinner>
 </div>

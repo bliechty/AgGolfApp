@@ -11,6 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SharedModule } from '../shared/shared/shared.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { environment } from 'src/environments/environment';
 
@@ -28,7 +29,8 @@ import { environment } from 'src/environments/environment';
     MatSelectModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatProgressSpinnerModule
   ]
 })
 export class GolfModule { }
