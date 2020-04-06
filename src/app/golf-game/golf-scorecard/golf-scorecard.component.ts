@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation, ViewChild } from "@angular/core";
 import { GolfService } from "../golf.service";
 import { Data } from "src/app/interfaces/data";
 import {
@@ -10,7 +10,6 @@ import {
 } from "../../scripts/action";
 import { Hole } from "src/app/interfaces/hole";
 import { Player } from "src/app/interfaces/player";
-import * as angular from 'angular';
 
 @Component({
   selector: "app-golf-scorecard",
@@ -22,7 +21,9 @@ export class GolfScorecardComponent implements OnInit {
   selectedCourseName: string;
   players: Player[];
 
-  constructor(private golfService: GolfService) {}
+  constructor(
+    private golfService: GolfService,
+  ) {}
 
   ngOnInit(): void {
     this.golfService.getUserInputObservable().subscribe((data) => {

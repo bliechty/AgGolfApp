@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { GolfService } from '../golf.service';
 import { Router } from '@angular/router';
 import { Course } from 'src/app/interfaces/course';
@@ -15,7 +14,7 @@ export class CourseSelectionComponent implements OnInit {
   constructor(
       private golfService: GolfService,
       private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.getCourses();
