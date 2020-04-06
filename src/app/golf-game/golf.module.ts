@@ -15,15 +15,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { environment } from 'src/environments/environment';
 
-import { ScorecardDirective } from '../directives/scorecard.directive';
-
 @NgModule({
   declarations: [
     CourseSelectionComponent,
     AmountOfUsersSelectionComponent,
     GolfScorecardComponent,
-    TeeSelectionComponent,
-    ScorecardDirective
+    TeeSelectionComponent
   ],
   imports: [
     CommonModule,
