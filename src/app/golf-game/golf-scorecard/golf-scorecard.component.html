@@ -19,13 +19,23 @@
                 class="firstColumn playerName"
                 placeholder="Player {{ i }} (Click to edit)"
                 (blur)="loseFocus($event)"
-                (keyup)="enterPlayerName($event, i - 1)">
+                (keyup)="enterPlayerName($event, i - 1)"
+              >
             </div>
             <div *ngFor="let i of a1" id="col{{ i }}" class="col">
               <div class="boxes">{{ i }}</div>
+              <input
+                *ngFor="let j of a3"
+                type='text'
+                id='p{{ j }}h{{ i }}'
+                class='boxes playerScore'
+                (keyup)='enterScore($event, i - 1, j - 1)'
+                (blur)='loseFocus($event)'
+              >
             </div>
             <div id="out-score" class="scores">
               <div class="score-boxes">Out</div>
+              <div *ngFor="let i of a3" id='outscore{{ i }}' class='score-boxes'></div>
             </div>
             <div *ngFor="let i of a2" id="col{{ i }}" class="col">
               <div class="boxes">{{ i }}</div>
@@ -55,4 +65,4 @@
 </div>
 
 
-<!-- <button (click)="displayPlayers()">display players</button> -->
+<button (click)="displayPlayers()">display players</button>

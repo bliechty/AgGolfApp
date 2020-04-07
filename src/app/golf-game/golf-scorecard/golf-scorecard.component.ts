@@ -45,9 +45,9 @@ export class GolfScorecardComponent implements OnInit {
     });
   }
 
-  // displayPlayers(): void {
-  //   console.log(this.players);
-  // }
+  displayPlayers(): void {
+    console.log(this.players);
+  }
 
   producePlaceholderArrays(): void {
     for (let i = 1; i <= this.numberOfHoles; i++) {
@@ -69,23 +69,38 @@ export class GolfScorecardComponent implements OnInit {
     $('.error').html('');
   }
 
-  // enterScore(e, el, playerNum, holeNum, numOfHoles) {
-  //   $(".error").css("display", "none");
-  //   $(".error").html("");
-  //   if (e.which === 13) {
-  //     let numInput = Number($(el).val());
-  //     if (Number.isInteger(numInput) && numInput > 0) {
-  //       players.collection[playerNum - 1].updateScores(playerNum, holeNum, numInput, numOfHoles);
-  //       $(el).attr("placeholder", numInput);
-  //       $(el).val("");
-  //       players.collection[playerNum - 1].isFinished(numOfHoles, playerNum);
-  //     } else {
-  //       $(el).val("");
-  //       $(".error").css("display", "block");
-  //       $(".error").html("That is not a valid input");
-  //     }
-  //   }
-  // }
+  enterScore($event, holeNum, playerIndex) {
+    console.log(holeNum);
+    const player: Player = this.players[playerIndex];
+    $(".error").css("display", "none");
+    $(".error").html("");
+    if ($event.key === "Enter") {
+      const numInput = Number($event.target.value);
+      if (Number.isInteger(numInput) && numInput > 0) {
+        this.updateScores(playerIndex + 1, holeNum, numInput, player);
+        $event.target.placeholder = numInput;
+        $event.target.value = '';
+        this.isFinished(playerIndex);
+      } else {
+        $event.target.value = '';
+        $(".error").css("display", "block");
+        $(".error").html("That is not a valid input");
+      }
+    }
+  }
+
+  updateScores (playerNum, holeNum, score, player) {
+    if (holeNum + 1 <= this.numberOfHoles / 2) {
+        player.outScores[holeNum] = score;
+        $(`#outscore${playerNum}`).html(this.getScores('out', player));
+    } else {
+        player.inScores[holeNum] = score;
+        $(`#inscore${playerNum}`).html(this.getScores('in', player));
+    }
+
+    player.totalScores[holeNum] = score;
+    $(`#totalscore${playerNum}`).html(this.getScores('total', player));
+  }
 
   enterPlayerName($event, playerIndex) {
     const value = $event.target.value;
