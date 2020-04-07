@@ -104,12 +104,8 @@ select {
 .container .score-card-container * {
   box-sizing: border-box;
 }
-.container .score-card-container .tee-selection {
-  display: none;
-}
 .container .score-card-container .score-card {
   border: 1px solid #000000;
-  display: none;
   width: auto;
 }
 .container .score-card-container .score-card .holes,

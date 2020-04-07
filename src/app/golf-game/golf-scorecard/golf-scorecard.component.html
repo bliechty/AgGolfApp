@@ -4,17 +4,41 @@
   </mat-card>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="players">
   <div class="score-card-container">
       <div class="tee-selection">
 
       </div>
       <div class="score-card">
           <div class="holes">
-
+            <div id="first-column">
+              <div class="firstColumn">Hole</div>
+              <input
+                *ngFor="let i of a3"
+                type="text"
+                class="firstColumn playerName"
+                placeholder="Player {{ i }} (Click to edit)"
+                (blur)="loseFocus($event)"
+                (keyup)="enterPlayerName($event, i - 1)">
+            </div>
+            <div *ngFor="let i of a1" id="col{{ i }}" class="col">
+              <div class="boxes">{{ i }}</div>
+            </div>
+            <div id="out-score" class="scores">
+              <div class="score-boxes">Out</div>
+            </div>
+            <div *ngFor="let i of a2" id="col{{ i }}" class="col">
+              <div class="boxes">{{ i }}</div>
+            </div>
+            <div id="in-score" class="scores">
+              <div class="score-boxes">In</div>
+            </div>
+            <div id="total-score" class="scores">
+              <div class="score-boxes">Total</div>
+            </div>
           </div>
           <div class="yardage">
-
+            
           </div>
       </div>
   </div>
@@ -29,3 +53,6 @@
       </div>
   </div>
 </div>
+
+
+<!-- <button (click)="displayPlayers()">display players</button> -->

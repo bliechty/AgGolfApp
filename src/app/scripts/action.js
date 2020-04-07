@@ -1,36 +1,3 @@
-export function displayHoles (numberOfHoles) {
-    $('.player-total-score-container').html('');
-    $('.score-card').css('display', 'block');
-    $('.tee-selection').css('display', 'block');
-    $('.holes').html('');
-    $('.holes').append(`<div id='first-column'>
-            <div class='firstColumn'>Hole</div>
-        </div>`);
-
-    for (let i = 1; i <= numberOfHoles / 2; i++) {
-        $('.holes').append(`<div id='col${i}' class='col'>
-                <div class='boxes'>${i}</div>
-            </div>`);
-    }
-
-    $('.holes').append(`<div id='out-score' class='scores'>
-            <div class='score-boxes'>Out</div>
-        </div>`);
-
-    for (let i = numberOfHoles / 2 + 1; i <= numberOfHoles; i++) {
-        $('.holes').append(`<div id='col${i}' class='col'>
-            <div class='boxes'>${i}</div>
-        </div>`);
-    }
-
-    $('.holes').append(`<div id='in-score' class='scores'>
-            <div class='score-boxes'>In</div>
-        </div>`);
-    $('.holes').append(`<div id='total-score' class='scores'>
-            <div class='score-boxes'>Total</div>
-        </div>`);
-}
-
 export function displayScoreCardInfo (numberOfHoles, numberOfPlayers) {
     for (let i = 1; i <= numberOfPlayers; i++) {
         $('#first-column').append(`<input type='text' class='firstColumn playerName' placeholder='Player ${i} (Click to edit)'
