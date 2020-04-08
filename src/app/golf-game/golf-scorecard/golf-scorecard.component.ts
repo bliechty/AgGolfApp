@@ -27,19 +27,19 @@ export class GolfScorecardComponent implements OnInit {
   a3: number[] = [];
 
   parObj: OtherInfo = {
-    inScoresTotal: 0,
-    outScoresTotal: 0,
-    totalScore: 0
+    inTotal: 0,
+    outTotal: 0,
+    total: 0
   };
   hcpObj: OtherInfo = {
-    inScoresTotal: 0,
-    outScoresTotal: 0,
-    totalScore: 0
+    inTotal: 0,
+    outTotal: 0,
+    total: 0
   };
   yardsObj: OtherInfo = {
-    inScoresTotal: 0,
-    outScoresTotal: 0,
-    totalScore: 0
+    inTotal: 0,
+    outTotal: 0,
+    total: 0
   };
 
   constructor(
@@ -59,27 +59,27 @@ export class GolfScorecardComponent implements OnInit {
       this.produceOtherScorecardInfo();
     });
 
-    this.golfService.getPlayerData().subscribe((players) => {
-      this.players = players;
+    this.golfService.getPlayerData().subscribe(players => {
+      this.players = this.sanitizeScores(players);
     });
   }
 
   produceOtherScorecardInfo(): void {
     for (let i = 0; i < this.numberOfHoles; i++) {
       if (i < this.numberOfHoles / 2) {
-        this.parObj.outScoresTotal += this.holesArray[i].teeBoxes[0].par;
-        this.hcpObj.outScoresTotal += this.holesArray[i].teeBoxes[0].hcp;
-        this.yardsObj.outScoresTotal += this.holesArray[i].teeBoxes[0].yards;
+        this.parObj.outTotal += this.holesArray[i].teeBoxes[0].par;
+        this.hcpObj.outTotal += this.holesArray[i].teeBoxes[0].hcp;
+        this.yardsObj.outTotal += this.holesArray[i].teeBoxes[0].yards;
       } else {
-        this.parObj.inScoresTotal += this.holesArray[i].teeBoxes[0].par;
-        this.hcpObj.inScoresTotal += this.holesArray[i].teeBoxes[0].hcp;
-        this.yardsObj.inScoresTotal += this.holesArray[i].teeBoxes[0].yards;
+        this.parObj.inTotal += this.holesArray[i].teeBoxes[0].par;
+        this.hcpObj.inTotal += this.holesArray[i].teeBoxes[0].hcp;
+        this.yardsObj.inTotal += this.holesArray[i].teeBoxes[0].yards;
       }
     }
 
-    this.parObj.totalScore = this.parObj.outScoresTotal + this.parObj.inScoresTotal;
-    this.hcpObj.totalScore = this.hcpObj.outScoresTotal + this.hcpObj.inScoresTotal;
-    this.yardsObj.totalScore = this.yardsObj.outScoresTotal + this.yardsObj.inScoresTotal;
+    this.parObj.total = this.parObj.outTotal + this.parObj.inTotal;
+    this.hcpObj.total = this.hcpObj.outTotal + this.hcpObj.inTotal;
+    this.yardsObj.total = this.yardsObj.outTotal + this.yardsObj.inTotal;
   }
 
   producePlaceholderArrays(): void {
@@ -134,6 +134,30 @@ export class GolfScorecardComponent implements OnInit {
     $(`#totalscore${playerNum}`).html(this.getScores('total', player));
   }
 
+  sanitizeScores(players): Player[] {
+    for (let player of players) {
+      if (player.inScores.length === 0) {
+        for (let i = 0; i < this.numberOfHoles; i++) {
+          player.inScores[i] = null;
+        }
+      }
+      
+      if (player.outScores.length === 0) {
+        for (let i = 0; i < this.numberOfHoles; i++) {
+          player.outScores[i] = null;
+        }
+      }
+      
+      if (player.totalScores.length === 0) {
+        for (let i = 0; i < this.numberOfHoles; i++) {
+          player.totalScores[i] = null;
+        }
+      }
+    }
+
+    return players;
+  }
+
   enterPlayerName($event, playerIndex) {
     const value = $event.target.value;
     $('.error').css('display', 'none');
@@ -162,7 +186,7 @@ export class GolfScorecardComponent implements OnInit {
     const player: Player = this.players[playerIndex];
     let check = true;
     for (let i = 0; i < this.numberOfHoles; i++) {
-        if (player.totalScores[i] === undefined) {
+        if (player.totalScores[i] === null) {
             check = false;
             break;
         }
@@ -206,5 +230,9 @@ export class GolfScorecardComponent implements OnInit {
     } else if (type === 'total') {
         return player.totalScores.reduce((previous, current) => previous + current);
     }
+  }
+
+  saveCurrentGameInfo(): void {
+    this.golfService.writeToPlayerData(this.players);
   }
 }

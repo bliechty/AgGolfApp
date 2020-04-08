@@ -44,7 +44,7 @@ export class GolfService {
     return this.db.collection('user-input').doc<User>('1JqzeoKuTBHew0tVfSCq').update(userObj);
   }
 
-  writeToPlayerData(players): Promise<void> {
+  writeToPlayerData(players: Player[]): Promise<void> {
     return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').set({ players });
   }
 
