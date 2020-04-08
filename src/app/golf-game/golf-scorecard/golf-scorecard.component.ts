@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GolfService } from '../golf.service';
 import { Data } from 'src/app/interfaces/data';
 import { Hole } from 'src/app/interfaces/hole';
@@ -8,7 +8,8 @@ import { OtherInfo } from '../../interfaces/otherinfo';
 @Component({
   selector: 'app-golf-scorecard',
   templateUrl: './golf-scorecard.component.html',
-  styleUrls: ['./golf-scorecard.component.css']
+  styleUrls: ['./golf-scorecard.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class GolfScorecardComponent implements OnInit {
   players: Player[];
@@ -79,10 +80,6 @@ export class GolfScorecardComponent implements OnInit {
     this.parObj.totalScore = this.parObj.outScoresTotal + this.parObj.inScoresTotal;
     this.hcpObj.totalScore = this.hcpObj.outScoresTotal + this.hcpObj.inScoresTotal;
     this.yardsObj.totalScore = this.yardsObj.outScoresTotal + this.yardsObj.inScoresTotal;
-  }
-
-  displayPlayers(): void {
-    console.log(this.players);
   }
 
   producePlaceholderArrays(): void {

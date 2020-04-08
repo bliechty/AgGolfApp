@@ -37,16 +37,19 @@ select {
 
 .container {
   width: 100%;
-  height: 100%;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .container .info {
   display: flex;
+  margin-top: 50px;
 }
 .container .info .error-container {
-  width: 50%;
+  width: 33%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 5px;
+  height: auto;
 }
 .container .info .error-container .error {
   display: none;
@@ -59,10 +62,20 @@ select {
   margin: 10px;
 }
 .container .info .player-total-score-container {
-  width: 50%;
+  width: 33%;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 5px;
+  height: auto;
+}
+.container .info .options {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 5px;
+  height: auto;
 }
 .container .info .player-total-score-container .player-total-score {
   width: 300px;
