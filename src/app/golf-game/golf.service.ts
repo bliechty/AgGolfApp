@@ -44,14 +44,26 @@ export class GolfService {
     return this.db.collection('user-input').doc<User>('1JqzeoKuTBHew0tVfSCq').update(userObj);
   }
 
-  writeToPlayerData(players: Player[]): Promise<void> {
-    return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').set({ players });
+  writeToPlayerData(players: Player[], savedGame?: boolean): Promise<void> {
+    if (savedGame) {
+      return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').set({ players, savedGame });
+    } else {
+      return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').set({ players });
+    }
   }
 
   getPlayerData(): Observable<Player[]> {
     return this.db.collection('players-data').doc<TopLevel>('2DpTcsjam07ZyB3dm9tG').valueChanges().pipe(
       map((obj: TopLevel) => {
         return obj.players
+      })
+    );
+  }
+
+  getSavedGameObservable(): Observable<boolean> {
+    return this.db.collection('players-data').doc<TopLevel>('2DpTcsjam07ZyB3dm9tG').valueChanges().pipe(
+      map((obj: TopLevel)=> {
+        return obj.savedGame;
       })
     );
   }

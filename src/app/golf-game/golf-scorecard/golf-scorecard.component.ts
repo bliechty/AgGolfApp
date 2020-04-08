@@ -234,6 +234,6 @@ export class GolfScorecardComponent implements OnInit {
   }
 
   saveCurrentGameInfo(): void {
-    this.golfService.writeToPlayerData(this.players);
+    this.golfService.writeToPlayerData(this.players, true);
   }
 }

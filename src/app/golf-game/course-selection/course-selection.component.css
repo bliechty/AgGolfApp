@@ -12,14 +12,30 @@
 }
 
 #flex {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 #flex-spinner {
   display: flex;
   margin-top: 80px;
   justify-content: center;
+}
+
+#load-game-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#or {
+  font-size: 25px;
+  margin-top: 80px;
+}
+
+#load-game {
+  margin-top: 80px;
 }

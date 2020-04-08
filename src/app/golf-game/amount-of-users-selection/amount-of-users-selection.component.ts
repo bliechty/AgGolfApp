@@ -29,7 +29,7 @@ export class AmountOfUsersSelectionComponent implements OnInit {
       }
       this.golfService.writeToPlayerData(players).then(_ => {
         this.router.navigateByUrl('/tee-selection');
-      })
+      });
     });
   }
 }
