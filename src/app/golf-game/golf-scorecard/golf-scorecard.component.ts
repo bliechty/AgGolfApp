@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { GolfService } from "../golf.service";
-import { Data } from "src/app/interfaces/data";
-import { Hole } from "src/app/interfaces/hole";
-import { Player } from "src/app/interfaces/player";
+import { Component, OnInit } from '@angular/core';
+import { GolfService } from '../golf.service';
+import { Data } from 'src/app/interfaces/data';
+import { Hole } from 'src/app/interfaces/hole';
+import { Player } from 'src/app/interfaces/player';
+import { OtherInfo } from '../../interfaces/otherinfo';
 
 @Component({
-  selector: "app-golf-scorecard",
-  templateUrl: "./golf-scorecard.component.html",
-  styleUrls: ["./golf-scorecard.component.css"]
+  selector: 'app-golf-scorecard',
+  templateUrl: './golf-scorecard.component.html',
+  styleUrls: ['./golf-scorecard.component.css']
 })
 export class GolfScorecardComponent implements OnInit {
   players: Player[];
@@ -24,6 +25,22 @@ export class GolfScorecardComponent implements OnInit {
   a2: number[] = [];
   a3: number[] = [];
 
+  parObj: OtherInfo = {
+    inScoresTotal: 0,
+    outScoresTotal: 0,
+    totalScore: 0
+  };
+  hcpObj: OtherInfo = {
+    inScoresTotal: 0,
+    outScoresTotal: 0,
+    totalScore: 0
+  };
+  yardsObj: OtherInfo = {
+    inScoresTotal: 0,
+    outScoresTotal: 0,
+    totalScore: 0
+  };
+
   constructor(
     private golfService: GolfService
   ) {}
@@ -38,11 +55,30 @@ export class GolfScorecardComponent implements OnInit {
       this.holesArray = data.selectedCourse.holes;
 
       this.producePlaceholderArrays();
+      this.produceOtherScorecardInfo();
     });
 
     this.golfService.getPlayerData().subscribe((players) => {
       this.players = players;
     });
+  }
+
+  produceOtherScorecardInfo(): void {
+    for (let i = 0; i < this.numberOfHoles; i++) {
+      if (i < this.numberOfHoles / 2) {
+        this.parObj.outScoresTotal += this.holesArray[i].teeBoxes[0].par;
+        this.hcpObj.outScoresTotal += this.holesArray[i].teeBoxes[0].hcp;
+        this.yardsObj.outScoresTotal += this.holesArray[i].teeBoxes[0].yards;
+      } else {
+        this.parObj.inScoresTotal += this.holesArray[i].teeBoxes[0].par;
+        this.hcpObj.inScoresTotal += this.holesArray[i].teeBoxes[0].hcp;
+        this.yardsObj.inScoresTotal += this.holesArray[i].teeBoxes[0].yards;
+      }
+    }
+
+    this.parObj.totalScore = this.parObj.outScoresTotal + this.parObj.inScoresTotal;
+    this.hcpObj.totalScore = this.hcpObj.outScoresTotal + this.hcpObj.inScoresTotal;
+    this.yardsObj.totalScore = this.yardsObj.outScoresTotal + this.yardsObj.inScoresTotal;
   }
 
   displayPlayers(): void {
@@ -70,11 +106,10 @@ export class GolfScorecardComponent implements OnInit {
   }
 
   enterScore($event, holeNum, playerIndex) {
-    console.log(holeNum);
     const player: Player = this.players[playerIndex];
-    $(".error").css("display", "none");
-    $(".error").html("");
-    if ($event.key === "Enter") {
+    $('.error').css('display', 'none');
+    $('.error').html('');
+    if ($event.key === 'Enter') {
       const numInput = Number($event.target.value);
       if (Number.isInteger(numInput) && numInput > 0) {
         this.updateScores(playerIndex + 1, holeNum, numInput, player);
@@ -83,8 +118,8 @@ export class GolfScorecardComponent implements OnInit {
         this.isFinished(playerIndex);
       } else {
         $event.target.value = '';
-        $(".error").css("display", "block");
-        $(".error").html("That is not a valid input");
+        $('.error').css('display', 'block');
+        $('.error').html('That is not a valid input');
       }
     }
   }

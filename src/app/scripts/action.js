@@ -1,97 +1,74 @@
-export function displayScoreCardInfo (numberOfHoles, numberOfPlayers) {
-    for (let i = 1; i <= numberOfPlayers; i++) {
-        $('#first-column').append(`<input type='text' class='firstColumn playerName' placeholder='Player ${i} (Click to edit)'
-            (keyup)='enterPlayerName(event, this, ${i - 1}, ${numberOfHoles})' (blur)='loseFocus(this)'>`);
+// export function displayPar(holesArray, numberOfHoles) {
+//     let totalPar = 0;
+//     let outPar, inPar;
+//     $('#first-column').append(`<div class='firstColumn'>Par</div>`);
 
-        for (let j = 1; j <= numberOfHoles / 2; j++) {
-            $(`#col${j}`).append(`<input type='text' id='p${i}h${j}' class='boxes playerScore'
-                (keyup)='enterScore(event, this, ${i}, ${j - 1}, ${numberOfHoles})' (blur)='loseFocus(this)'>`);
-        }
+//     for (let i = 1; i <= numberOfHoles / 2; i++) {
+//         totalPar += holesArray[i - 1].teeBoxes[0].par;
+//         $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].par}</div>`);
+//     }
 
-        $('#out-score').append(`<div id='outscore${i}' class='score-boxes'></div>`);
+//     outPar = totalPar;
 
-        for (let j = numberOfHoles / 2 + 1; j <= numberOfHoles; j++) {
-            $(`#col${j}`).append(`<input type='text' id='p${i}h${j}' class='boxes playerScore'
-                (keyup)='enterScore(event, this, ${i}, ${j - 1}, ${numberOfHoles})' (blur)='loseFocus(this)'>`);
-        }
+//     $('#out-score').append(`<div class='score-boxes'>${outPar}</div>`);
 
-        $('#in-score').append(`<div id='inscore${i}' class='score-boxes'></div>`);
-        $('#total-score').append(`<div id='totalscore${i}' class='score-boxes'></div>`);
-    }
-}
+//     for (let i = numberOfHoles / 2 + 1; i <= numberOfHoles; i++) {
+//         totalPar += holesArray[i - 1].teeBoxes[0].par;
+//         $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].par}</div>`);
+//     }
 
-export function displayPar(holesArray, numberOfHoles) {
-    let totalPar = 0;
-    let outPar, inPar;
-    $('#first-column').append(`<div class='firstColumn'>Par</div>`);
+//     inPar = totalPar - outPar;
 
-    for (let i = 1; i <= numberOfHoles / 2; i++) {
-        totalPar += holesArray[i - 1].teeBoxes[0].par;
-        $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].par}</div>`);
-    }
+//     $('#in-score').append(`<div class='score-boxes'>${inPar}</div>`);
+//     $('#total-score').append(`<div class='score-boxes' id='parTotal'>${totalPar}</div>`);
+// }
 
-    outPar = totalPar;
+// export function displayHandicap(holesArray, numberOfHoles) {
+//     let totalHandicap = 0;
+//     let outHandicap, inHandicap;
+//     $('#first-column').append(`<div class='firstColumn'>Handicap</div>`);
 
-    $('#out-score').append(`<div class='score-boxes'>${outPar}</div>`);
+//     for (let i = 1; i <= numberOfHoles / 2; i++) {
+//         totalHandicap += holesArray[i - 1].teeBoxes[0].hcp;
+//         $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].hcp}</div>`);
 
-    for (let i = numberOfHoles / 2 + 1; i <= numberOfHoles; i++) {
-        totalPar += holesArray[i - 1].teeBoxes[0].par;
-        $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].par}</div>`);
-    }
+//     outHandicap = totalHandicap;
 
-    inPar = totalPar - outPar;
+//     $('#out-score').append(`<div class='score-boxes'>${outHandicap}</div>`);
 
-    $('#in-score').append(`<div class='score-boxes'>${inPar}</div>`);
-    $('#total-score').append(`<div class='score-boxes' id='parTotal'>${totalPar}</div>`);
-}
+//     for (let i = numberOfHoles / 2 + 1; i <= numberOfHoles; i++) {
+//         totalHandicap += holesArray[i - 1].teeBoxes[0].hcp;
+//         $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].hcp}</div>`);
+//     }
 
-export function displayHandicap(holesArray, numberOfHoles) {
-    let totalHandicap = 0;
-    let outHandicap, inHandicap;
-    $('#first-column').append(`<div class='firstColumn'>Handicap</div>`);
+//     inHandicap = totalHandicap - outHandicap;
 
-    for (let i = 1; i <= numberOfHoles / 2; i++) {
-        totalHandicap += holesArray[i - 1].teeBoxes[0].hcp;
-        $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].hcp}</div>`);
-    }
+//     $('#in-score').append(`<div class='score-boxes'>${inHandicap}</div>`);
+//     $('#total-score').append(`<div class='score-boxes'>${totalHandicap}</div>`);
+// }
 
-    outHandicap = totalHandicap;
+// export function displayYardage(holesArray, numberOfHoles, tee) {
+//   $('.yardage').html('');
+//   let totalYards = 0;
+//   let outYards, inYards;
+//   $('.yardage').append(`<div class='firstColumn'>Yardage</div>`);
 
-    $('#out-score').append(`<div class='score-boxes'>${outHandicap}</div>`);
+//   for (let i = 1; i <= numberOfHoles / 2; i++) {
+//       totalYards += holesArray[i - 1].teeBoxes[tee].yards;
+//       $(`.yardage`).append(`<div class='boxes'>${JSON.stringify(holesArray[i - 1].teeBoxes[tee].yards)}</div>`);
+//   }
 
-    for (let i = numberOfHoles / 2 + 1; i <= numberOfHoles; i++) {
-        totalHandicap += holesArray[i - 1].teeBoxes[0].hcp;
-        $(`#col${i}`).append(`<div class='boxes'>${holesArray[i - 1].teeBoxes[0].hcp}</div>`);
-    }
+//   outYards = totalYards;
 
-    inHandicap = totalHandicap - outHandicap;
+//   $('.yardage').append(`<div class='score-boxes'>${outYards}</div>`);
 
-    $('#in-score').append(`<div class='score-boxes'>${inHandicap}</div>`);
-    $('#total-score').append(`<div class='score-boxes'>${totalHandicap}</div>`);
-}
+//   for (let i = numberOfHoles / 2 + 1; i <= numberOfHoles; i++) {
+//       totalYards += holesArray[i - 1].teeBoxes[tee].yards;
+//       $(`.yardage`).append(`<div class='boxes'>${JSON.stringify(holesArray[i - 1].teeBoxes[tee].yards)}</div>`);
+//   }
 
-export function displayYardage(holesArray, numberOfHoles, tee) {
-  $('.yardage').html('');
-  let totalYards = 0;
-  let outYards, inYards;
-  $('.yardage').append(`<div class='firstColumn'>Yardage</div>`);
+//   inYards = totalYards - outYards;
 
-  for (let i = 1; i <= numberOfHoles / 2; i++) {
-      totalYards += holesArray[i - 1].teeBoxes[tee].yards;
-      $(`.yardage`).append(`<div class='boxes'>${JSON.stringify(holesArray[i - 1].teeBoxes[tee].yards)}</div>`);
-  }
-
-  outYards = totalYards;
-
-  $('.yardage').append(`<div class='score-boxes'>${outYards}</div>`);
-
-  for (let i = numberOfHoles / 2 + 1; i <= numberOfHoles; i++) {
-      totalYards += holesArray[i - 1].teeBoxes[tee].yards;
-      $(`.yardage`).append(`<div class='boxes'>${JSON.stringify(holesArray[i - 1].teeBoxes[tee].yards)}</div>`);
-  }
-
-  inYards = totalYards - outYards;
-
-  $('.yardage').append(`<div class='score-boxes'>${inYards}</div>`);
-  $('.yardage').append(`<div class='score-boxes'>${totalYards}</div>`);
-}
+//   $('.yardage').append(`<div class='score-boxes'>${inYards}</div>`);
+//   $('.yardage').append(`<div class='score-boxes'>${totalYards}</div>`);
+// }
