@@ -18,58 +18,58 @@
                 (blur)="loseFocus($event)"
                 (keyup)="enterPlayerName($event, i - 1)"
               >
-              <div class='firstColumn'>Par</div>
-              <div class='firstColumn'>Handicap</div>
-              <div class='firstColumn'>Yardage</div>
+              <div class="firstColumn">Par</div>
+              <div class="firstColumn">Handicap</div>
+              <div class="firstColumn">Yardage</div>
             </div>
             <div *ngFor="let i of a1" id="col{{ i }}" class="col">
               <div class="boxes">{{ i }}</div>
               <input
                 *ngFor="let j of a3"
-                type='text'
-                id='p{{ j }}h{{ i }}'
-                class='boxes playerScore'
-                (keyup)='enterScore($event, i - 1, j - 1)'
-                (blur)='loseFocus($event)'
+                type="text"
+                id="p{{ j }}h{{ i }}"
+                class="boxes playerScore"
+                (keyup)="enterScore($event, i - 1, j - 1)"
+                (blur)="loseFocus($event)"
               >
-              <div class='boxes'>{{ holesArray[i - 1].teeBoxes[0].par }}</div>
-              <div class='boxes'>{{ holesArray[i - 1].teeBoxes[0].hcp }}</div>
-              <div class='boxes'>{{ holesArray[i - 1].teeBoxes[teeSelection].yards }}</div>
+              <div class="boxes">{{ holesArray[i - 1].teeBoxes[0].par }}</div>
+              <div class="boxes">{{ holesArray[i - 1].teeBoxes[0].hcp }}</div>
+              <div class="boxes">{{ holesArray[i - 1].teeBoxes[teeSelection].yards }}</div>
             </div>
             <div id="out-score" class="scores">
               <div class="score-boxes">Out</div>
-              <div *ngFor="let i of a3" id='outscore{{ i }}' class='score-boxes'></div>
-              <div class='score-boxes'>{{ parObj.outTotal }}</div>
-              <div class='score-boxes'>{{ hcpObj.outTotal }}</div>
-              <div class='score-boxes'>{{ yardsObj.outTotal }}</div>
+              <div *ngFor="let i of a3" id="outscore{{ i }}" class="score-boxes"></div>
+              <div class="score-boxes">{{ parObj.outTotal }}</div>
+              <div class="score-boxes">{{ hcpObj.outTotal }}</div>
+              <div class="score-boxes">{{ yardsObj.outTotal }}</div>
             </div>
             <div *ngFor="let i of a2" id="col{{ i }}" class="col">
               <div class="boxes">{{ i }}</div>
               <input
                 *ngFor="let j of a3"
-                type='text'
-                id='p{{ j }}h{{ i }}'
-                class='boxes playerScore'
-                (keyup)='enterScore($event, i - 1, j - 1)'
-                (blur)='loseFocus($event)'
+                type="text"
+                id="p{{ j }}h{{ i }}"
+                class="boxes playerScore"
+                (keyup)="enterScore($event, i - 1, j - 1)"
+                (blur)="loseFocus($event)"
               >
-              <div class='boxes'>{{ holesArray[i - 1].teeBoxes[0].par }}</div>
-              <div class='boxes'>{{ holesArray[i - 1].teeBoxes[0].hcp }}</div>
-              <div class='boxes'>{{ holesArray[i - 1].teeBoxes[teeSelection].yards }}</div>
+              <div class="boxes">{{ holesArray[i - 1].teeBoxes[0].par }}</div>
+              <div class="boxes">{{ holesArray[i - 1].teeBoxes[0].hcp }}</div>
+              <div class="boxes">{{ holesArray[i - 1].teeBoxes[teeSelection].yards }}</div>
             </div>
             <div id="in-score" class="scores">
               <div class="score-boxes">In</div>
-              <div *ngFor="let i of a3" id='inscore{{ i }}' class='score-boxes'></div>
-              <div class='score-boxes'>{{ parObj.inTotal }}</div>
-              <div class='score-boxes'>{{ hcpObj.inTotal }}</div>
-              <div class='score-boxes'>{{ yardsObj.inTotal }}</div>
+              <div *ngFor="let i of a3" id="inscore{{ i }}" class="score-boxes"></div>
+              <div class="score-boxes">{{ parObj.inTotal }}</div>
+              <div class="score-boxes">{{ hcpObj.inTotal }}</div>
+              <div class="score-boxes">{{ yardsObj.inTotal }}</div>
             </div>
             <div id="total-score" class="scores">
               <div class="score-boxes">Total</div>
-              <div *ngFor="let i of a3" id='totalscore{{ i }}' class='score-boxes'></div>
-              <div class='score-boxes'>{{ parObj.total }}</div>
-              <div class='score-boxes'>{{ hcpObj.total }}</div>
-              <div class='score-boxes'>{{ yardsObj.total }}</div>
+              <div *ngFor="let i of a3" id="totalscore{{ i }}" class="score-boxes"></div>
+              <div class="score-boxes" id="parTotal">{{ parObj.total }}</div>
+              <div class="score-boxes">{{ hcpObj.total }}</div>
+              <div class="score-boxes">{{ yardsObj.total }}</div>
             </div>
           </div>
       </div>
