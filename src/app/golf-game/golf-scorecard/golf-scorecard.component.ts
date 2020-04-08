@@ -126,7 +126,8 @@ export class GolfScorecardComponent implements OnInit {
         player.outScores[holeNum] = score;
         $(`#outscore${playerNum}`).html(this.getScores('out', player));
     } else {
-        player.inScores[holeNum] = score;
+        console.log(holeNum - (this.numberOfHoles / 2));
+        player.inScores[holeNum - (this.numberOfHoles / 2)] = score;
         $(`#inscore${playerNum}`).html(this.getScores('in', player));
     }
 
