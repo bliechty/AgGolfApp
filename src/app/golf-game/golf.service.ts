@@ -48,7 +48,7 @@ export class GolfService {
     if (savedGame) {
       return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').set({ players, savedGame });
     } else {
-      return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').set({ players });
+      return this.db.collection('players-data').doc('2DpTcsjam07ZyB3dm9tG').update({ players });
     }
   }
 
@@ -66,5 +66,9 @@ export class GolfService {
         return obj.savedGame;
       })
     );
+  }
+
+  writeSavedGame(savedGame: boolean): Promise<void> {
+    return this.db.collection('players-data').doc<TopLevel>('2DpTcsjam07ZyB3dm9tG').update({ savedGame });
   }
 }

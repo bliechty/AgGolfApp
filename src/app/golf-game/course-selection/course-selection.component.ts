@@ -38,7 +38,9 @@ export class CourseSelectionComponent implements OnInit {
   selectCourse(id: number): void {
     this.golfService.getCourseObservableById(id).subscribe(course => {
       this.golfService.writeToUserInputByName('selectedCourse', course).then(_ => {
-        this.router.navigateByUrl('/amount-of-users');
+        this.golfService.writeSavedGame(false).then(_ => {
+          this.router.navigateByUrl('/amount-of-users');
+        })
       });
     });
   }
