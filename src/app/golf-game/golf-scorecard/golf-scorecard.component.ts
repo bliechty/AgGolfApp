@@ -137,13 +137,13 @@ export class GolfScorecardComponent implements OnInit {
   sanitizeScores(players): Player[] {
     for (let player of players) {
       if (player.inScores.length === 0) {
-        for (let i = 0; i < this.numberOfHoles; i++) {
+        for (let i = 0; i < this.numberOfHoles / 2; i++) {
           player.inScores[i] = null;
         }
       }
       
       if (player.outScores.length === 0) {
-        for (let i = 0; i < this.numberOfHoles; i++) {
+        for (let i = 0; i < this.numberOfHoles / 2; i++) {
           player.outScores[i] = null;
         }
       }
