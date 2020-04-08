@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { GolfService } from '../golf.service';
 import { Data } from 'src/app/interfaces/data';
 import { Hole } from 'src/app/interfaces/hole';
 import { Player } from 'src/app/interfaces/player';
 import { OtherInfo } from '../../interfaces/otherinfo';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-golf-scorecard',
@@ -11,7 +12,7 @@ import { OtherInfo } from '../../interfaces/otherinfo';
   styleUrls: ['./golf-scorecard.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class GolfScorecardComponent implements OnInit {
+export class GolfScorecardComponent implements OnInit, OnDestroy {
   players: Player[];
 
   selectedCourseName: string;
@@ -42,12 +43,15 @@ export class GolfScorecardComponent implements OnInit {
     total: 0
   };
 
+  getUserInputObservableSubscription: Subscription;
+  getPlayerDataSubscription: Subscription;
+
   constructor(
     private golfService: GolfService
   ) {}
 
   ngOnInit(): void {
-    this.golfService.getUserInputObservable().subscribe((data) => {
+    this.getUserInputObservableSubscription = this.golfService.getUserInputObservable().subscribe((data) => {
       this.selectedCourseName = data.selectedCourse.name;
       this.selectedCourse = data.selectedCourse;
       this.numberOfPlayers = data.amountOfUsers;
@@ -59,9 +63,14 @@ export class GolfScorecardComponent implements OnInit {
       this.produceOtherScorecardInfo();
     });
 
-    this.golfService.getPlayerData().subscribe(players => {
+    this.getPlayerDataSubscription = this.golfService.getPlayerData().subscribe(players => {
       this.players = this.sanitizeScores(players);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.getUserInputObservableSubscription.unsubscribe();
+    this.getPlayerDataSubscription.unsubscribe();
   }
 
   produceOtherScorecardInfo(): void {
@@ -109,7 +118,7 @@ export class GolfScorecardComponent implements OnInit {
     if ($event.key === 'Enter') {
       const numInput = Number($event.target.value);
       if (Number.isInteger(numInput) && numInput > 0) {
-        this.updateScores(playerIndex + 1, holeNum, numInput, player);
+        this.updateScores(holeNum, numInput, player);
         $event.target.placeholder = numInput;
         $event.target.value = '';
         this.isFinished(playerIndex);
@@ -121,18 +130,14 @@ export class GolfScorecardComponent implements OnInit {
     }
   }
 
-  updateScores (playerNum, holeNum, score, player) {
+  updateScores (holeNum, score, player) {
     if (holeNum + 1 <= this.numberOfHoles / 2) {
         player.outScores[holeNum] = score;
-        $(`#outscore${playerNum}`).html(this.getScores('out', player));
     } else {
-        console.log(holeNum - (this.numberOfHoles / 2));
         player.inScores[holeNum - (this.numberOfHoles / 2)] = score;
-        $(`#inscore${playerNum}`).html(this.getScores('in', player));
     }
 
     player.totalScores[holeNum] = score;
-    $(`#totalscore${playerNum}`).html(this.getScores('total', player));
   }
 
   sanitizeScores(players): Player[] {
@@ -225,11 +230,11 @@ export class GolfScorecardComponent implements OnInit {
 
   getScores (type, player) {
     if (type === 'in') {
-        return player.inScores.reduce((previous, current) => previous + current);
+      return player.inScores.reduce((previous, current) => previous + current);
     } else if (type === 'out') {
-        return player.outScores.reduce((previous, current) => previous + current);
+      return player.outScores.reduce((previous, current) => previous + current);
     } else if (type === 'total') {
-        return player.totalScores.reduce((previous, current) => previous + current);
+      return player.totalScores.reduce((previous, current) => previous + current);
     }
   }
 

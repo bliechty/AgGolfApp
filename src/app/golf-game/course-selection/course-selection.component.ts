@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GolfService } from '../golf.service';
 import { Router } from '@angular/router';
 import { Course } from 'src/app/interfaces/course';
-import { tap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-course-selection',
   templateUrl: './course-selection.component.html',
   styleUrls: ['./course-selection.component.css']
 })
-export class CourseSelectionComponent implements OnInit {
+export class CourseSelectionComponent implements OnInit, OnDestroy {
   courses: Course[];
 
   savedGame: boolean = false;
+
+  getCoursesObservableSubscription: Subscription;
+  getSavedGameObservableSubscription: Subscription;
+  getCourseObservableByIdSubscription: Subscription;
 
   constructor(
       private golfService: GolfService,
@@ -23,12 +27,21 @@ export class CourseSelectionComponent implements OnInit {
     this.getCourses();
   }
 
+  ngOnDestroy(): void {
+    this.getCoursesObservableSubscription.unsubscribe();
+    this.getSavedGameObservableSubscription.unsubscribe();
+
+    if (this.getCourseObservableByIdSubscription) {
+      this.getCourseObservableByIdSubscription.unsubscribe();
+    }
+  }
+
   getCourses(): void {
-    this.golfService.getCoursesObservable().subscribe(courses => {
+    this.getCoursesObservableSubscription = this.golfService.getCoursesObservable().subscribe(courses => {
       this.courses = courses;
     });
 
-    this.golfService.getSavedGameObservable().subscribe(savedGame => {
+    this.getSavedGameObservableSubscription = this.golfService.getSavedGameObservable().subscribe(savedGame => {
       if (savedGame) {
         this.savedGame = true;
       }
@@ -36,7 +49,7 @@ export class CourseSelectionComponent implements OnInit {
   }
     
   selectCourse(id: number): void {
-    this.golfService.getCourseObservableById(id).subscribe(course => {
+    this.getCourseObservableByIdSubscription = this.golfService.getCourseObservableById(id).subscribe(course => {
       this.golfService.writeToUserInputByName('selectedCourse', course).then(_ => {
         this.golfService.writeSavedGame(false).then(_ => {
           this.router.navigateByUrl('/amount-of-users');

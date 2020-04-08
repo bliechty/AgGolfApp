@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { GolfService } from '../golf.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tee-selection',
   templateUrl: './tee-selection.component.html',
   styleUrls: ['./tee-selection.component.css']
 })
-export class TeeSelectionComponent implements OnInit {
+export class TeeSelectionComponent implements OnInit, OnDestroy {
   valueNotSelected: boolean = true;
   teeOptions: string[] = [];
+
+  getUserInputObservableSubscription: Subscription;
 
   constructor(
       private router: Router,
@@ -17,13 +20,17 @@ export class TeeSelectionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.golfService.getUserInputObservable().subscribe(data => {
+    this.getUserInputObservableSubscription = this.golfService.getUserInputObservable().subscribe(data => {
       for (let teeBox of data.selectedCourse.holes[0].teeBoxes) {
         if (teeBox.teeType !== "auto change location") {
           this.teeOptions.push(teeBox.teeType);
         }
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.getUserInputObservableSubscription.unsubscribe();
   }
 
   onSelectChange(): void {
