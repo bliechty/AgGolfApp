@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class TeeSelectionComponent implements OnInit, OnDestroy {
   valueNotSelected: boolean = true;
-  teeOptions: string[] = [];
+  teeOptions: string[];
 
   getUserInputObservableSubscription: Subscription;
 
@@ -21,6 +21,7 @@ export class TeeSelectionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getUserInputObservableSubscription = this.golfService.getUserInputObservable().subscribe(data => {
+      this.teeOptions = [];
       for (let teeBox of data.selectedCourse.holes[0].teeBoxes) {
         if (teeBox.teeType !== "auto change location") {
           this.teeOptions.push(teeBox.teeType);
