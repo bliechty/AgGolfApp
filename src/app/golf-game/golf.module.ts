@@ -8,20 +8,22 @@ import { TeeSelectionComponent } from './tee-selection/tee-selection.component';
 import { MatCardModule } from "@angular/material/card";
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
-import { SharedModule } from '../shared/shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { environment } from 'src/environments/environment';
+import { DuplicateNamePipe } from '../pipes/duplicate-name.pipe';
 
 @NgModule({
   declarations: [
     CourseSelectionComponent,
     AmountOfUsersSelectionComponent,
     GolfScorecardComponent,
-    TeeSelectionComponent
+    TeeSelectionComponent,
+    DuplicateNamePipe
   ],
   imports: [
     CommonModule,

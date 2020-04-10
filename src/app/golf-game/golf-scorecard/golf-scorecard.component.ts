@@ -1,16 +1,23 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { GolfService } from '../golf.service';
-import { Data } from 'src/app/interfaces/data';
-import { Hole } from 'src/app/interfaces/hole';
-import { Player } from 'src/app/interfaces/player';
-import { OtherInfo } from '../../interfaces/otherinfo';
-import { Subscription } from 'rxjs';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  OnDestroy,
+  ɵCodegenComponentFactoryResolver,
+} from "@angular/core";
+import { GolfService } from "../golf.service";
+import { Data } from "src/app/interfaces/data";
+import { Hole } from "src/app/interfaces/hole";
+import { Player } from "src/app/interfaces/player";
+import { OtherInfo } from "../../interfaces/otherinfo";
+import { Subscription } from "rxjs";
+import { tap, map } from "rxjs/operators";
 
 @Component({
-  selector: 'app-golf-scorecard',
-  templateUrl: './golf-scorecard.component.html',
-  styleUrls: ['./golf-scorecard.component.css'],
-  encapsulation: ViewEncapsulation.None
+  selector: "app-golf-scorecard",
+  templateUrl: "./golf-scorecard.component.html",
+  styleUrls: ["./golf-scorecard.component.css"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class GolfScorecardComponent implements OnInit, OnDestroy {
   players: Player[];
@@ -30,63 +37,63 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
   parObj: OtherInfo = {
     inTotal: 0,
     outTotal: 0,
-    total: 0
+    total: 0,
   };
   hcpObj: OtherInfo = {
     inTotal: 0,
     outTotal: 0,
-    total: 0
+    total: 0,
   };
   yardsObj: OtherInfo = {
     inTotal: 0,
     outTotal: 0,
-    total: 0
+    total: 0,
   };
 
   getUserInputObservableSubscription: Subscription;
-  getPlayerDataSubscription: Subscription;
 
-  constructor(
-    private golfService: GolfService
-  ) {}
+  constructor(private golfService: GolfService) {}
 
   ngOnInit(): void {
-    this.getUserInputObservableSubscription = this.golfService.getUserInputObservable().subscribe((data) => {
-      this.selectedCourseName = data.selectedCourse.name;
-      this.selectedCourse = data.selectedCourse;
-      this.numberOfPlayers = data.amountOfUsers;
-      this.teeSelection= data.teeSelection;
-      this.numberOfHoles = data.selectedCourse.holeCount;
-      this.holesArray = data.selectedCourse.holes;
+    this.getUserInputObservableSubscription = this.golfService
+      .getUserInputObservable()
+      .subscribe((data) => {
+        this.selectedCourseName = data.selectedCourse.name;
+        this.selectedCourse = data.selectedCourse;
+        this.numberOfPlayers = data.amountOfUsers;
+        this.teeSelection = data.teeSelection;
+        this.numberOfHoles = data.selectedCourse.holeCount;
+        this.holesArray = data.selectedCourse.holes;
 
-      this.producePlaceholderArrays();
-      this.produceOtherScorecardInfo();
+        this.producePlaceholderArrays();
+        this.produceOtherScorecardInfo();
 
-      this.getPlayerDataSubscription = this.golfService.getPlayerData().subscribe(players => {
-        this.players = this.sanitizeScores(players);
-        $(document).ready(() => {
-          for (let i of this.a3) {
-            this.isFinished(i - 1);
-          }
-        });
+        const tempSubscription: Subscription = this.golfService
+          .getPlayerData()
+          .pipe(
+            tap((players) => {
+              console.log("shouldn't be here more than once");
+              this.players = this.sanitizeScores(players).map((player) => {
+                return {
+                  ...player,
+                  display: false,
+                };
+              });
+            })
+          )
+          .subscribe((_) => {
+            $(document).ready(() => {
+              for (let i of this.a3) {
+                this.isFinished(i - 1);
+              }
+              tempSubscription.unsubscribe();
+            });
+          });
       });
-    });
   }
 
   ngOnDestroy(): void {
     this.getUserInputObservableSubscription.unsubscribe();
-    this.getPlayerDataSubscription.unsubscribe();
-
-    const tempSubscription: Subscription = this.golfService.getPlayerData().subscribe(players => {
-      this.golfService.writeToPlayerData(players.map(player => {
-        return {
-          ...player,
-          display: false
-        }
-      })).then(_ => {
-        tempSubscription.unsubscribe();
-      });
-    });
   }
 
   produceOtherScorecardInfo(): void {
@@ -122,35 +129,35 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
   }
 
   loseFocus($event): void {
-    $event.target.value = '';
-    $('.error').css('display', 'none');
-    $('.error').html('');
+    $event.target.value = "";
+    $(".error").css("display", "none");
+    $(".error").html("");
   }
 
   enterScore($event, holeNum, playerIndex) {
     const player: Player = this.players[playerIndex];
-    $('.error').css('display', 'none');
-    $('.error').html('');
-    if ($event.key === 'Enter') {
+    $(".error").css("display", "none");
+    $(".error").html("");
+    if ($event.key === "Enter") {
       const numInput = Number($event.target.value);
       if (Number.isInteger(numInput) && numInput > 0) {
         this.updateScores(holeNum, numInput, player);
         $event.target.placeholder = numInput;
-        $event.target.value = '';
+        $event.target.value = "";
         this.isFinished(playerIndex);
       } else {
-        $event.target.value = '';
-        $('.error').css('display', 'block');
-        $('.error').html('That is not a valid input');
+        $event.target.value = "";
+        $(".error").css("display", "block");
+        $(".error").html("That is not a valid input");
       }
     }
   }
 
-  updateScores (holeNum, score, player) {
+  updateScores(holeNum, score, player) {
     if (holeNum + 1 <= this.numberOfHoles / 2) {
-        player.outScores[holeNum] = score;
+      player.outScores[holeNum] = score;
     } else {
-        player.inScores[holeNum - (this.numberOfHoles / 2)] = score;
+      player.inScores[holeNum - this.numberOfHoles / 2] = score;
     }
 
     player.totalScores[holeNum] = score;
@@ -163,13 +170,13 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
           player.inScores[i] = null;
         }
       }
-      
+
       if (player.outScores.length === 0) {
         for (let i = 0; i < this.numberOfHoles / 2; i++) {
           player.outScores[i] = null;
         }
       }
-      
+
       if (player.totalScores.length === 0) {
         for (let i = 0; i < this.numberOfHoles; i++) {
           player.totalScores[i] = null;
@@ -182,83 +189,101 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
 
   enterPlayerName($event, playerIndex) {
     const value = $event.target.value;
-    $('.error').css('display', 'none');
-    $('.error').html('');
-    if ($event.key === 'Enter') {
-        if (value === '') {
-            $('.error').css('display', 'block');
-            $('.error').html('Name cannot be empty');
-        } else if (this.duplicate(value)) {
-            $('.error').css('display', 'block');
-            $('.error').html('Duplicate name, try again');
-        } else {
-            this.players[playerIndex].name = value;
-            $event.target.placeholder = value;
-            this.isFinished(playerIndex);
-        }
-        $event.target.value = '';
+    $(".error").css("display", "none");
+    $(".error").html("");
+    if ($event.key === "Enter") {
+      if (value === "") {
+        $(".error").css("display", "block");
+        $(".error").html("Name cannot be empty");
+      } else if (this.duplicate(value)) {
+        $(".error").css("display", "block");
+        $(".error").html("Duplicate name, try again");
+      } else {
+        this.players[playerIndex].name = value;
+        $event.target.placeholder = value;
+        this.isFinished(playerIndex);
+      }
+      $event.target.value = "";
     }
   }
 
   duplicate(name) {
-    return this.players.some(player => player.name === name);
+    return this.players.some((player) => player.name === name);
   }
 
   isFinished(playerIndex) {
     const player: Player = this.players[playerIndex];
     let check = true;
     for (let i = 0; i < this.numberOfHoles; i++) {
-        if (player.totalScores[i] === null) {
-            check = false;
-            break;
-        }
+      if (player.totalScores[i] === null) {
+        check = false;
+        break;
+      }
     }
 
     if (player.totalScores.length === this.numberOfHoles && check) {
-        let par = Number($('#parTotal').html());
-        let totalScore = this.getScores('total', player);
-        if (player.display === false) {
-            if (par === totalScore) {
-                $('.player-total-score-container').append(`<div id='player${playerIndex + 1}total' class='player-total-score'>
+      let par = Number($("#parTotal").html());
+      let totalScore = this.getScores("total", player);
+      if (player.display === false) {
+        if (par === totalScore) {
+          $(".player-total-score-container").append(`<div id='player${
+            playerIndex + 1
+          }total' class='player-total-score'>
                         ${player.name}'s score is on par
                     </div>`);
-            } else if (totalScore > par) {
-                $('.player-total-score-container').append(`<div id='player${playerIndex + 1}total' class='player-total-score'>
-                        ${player.name}'s score is ${totalScore - par} more than par
+        } else if (totalScore > par) {
+          $(".player-total-score-container").append(`<div id='player${
+            playerIndex + 1
+          }total' class='player-total-score'>
+                        ${player.name}'s score is ${
+            totalScore - par
+          } more than par
                     </div>`);
-            } else {
-                $('.player-total-score-container').append(`<div id='player${playerIndex + 1}total' class='player-total-score'>
-                        ${player.name}'s score is ${par - totalScore} less than par
-                    </div>`);
-            }
-            player.display = true;
         } else {
-            if (par === totalScore) {
-                $(`#player${playerIndex + 1}total`).html(`${player.name}'s score is on par`);
-            } else if (totalScore > par) {
-                $(`#player${playerIndex + 1}total`).html(`${player.name}'s score is ${totalScore - par} more than par`);
-            } else {
-                $(`#player${playerIndex + 1}total`).html(`${player.name}'s score is ${par - totalScore} less than par`);
-            }
+          $(".player-total-score-container").append(`<div id='player${
+            playerIndex + 1
+          }total' class='player-total-score'>
+                        ${player.name}'s score is ${
+            par - totalScore
+          } less than par
+                    </div>`);
         }
-     }
+        player.display = true;
+      } else {
+        if (par === totalScore) {
+          $(`#player${playerIndex + 1}total`).html(
+            `${player.name}'s score is on par`
+          );
+        } else if (totalScore > par) {
+          $(`#player${playerIndex + 1}total`).html(
+            `${player.name}'s score is ${totalScore - par} more than par`
+          );
+        } else {
+          $(`#player${playerIndex + 1}total`).html(
+            `${player.name}'s score is ${par - totalScore} less than par`
+          );
+        }
+      }
+    }
   }
 
-  getScores (type, player) {
-    if (type === 'in') {
+  getScores(type, player) {
+    if (type === "in") {
       return player.inScores.reduce((previous, current) => previous + current);
-    } else if (type === 'out') {
+    } else if (type === "out") {
       return player.outScores.reduce((previous, current) => previous + current);
-    } else if (type === 'total') {
-      return player.totalScores.reduce((previous, current) => previous + current);
+    } else if (type === "total") {
+      return player.totalScores.reduce(
+        (previous, current) => previous + current
+      );
     }
   }
 
   saveCurrentGameInfo(): void {
-    this.golfService.writeToPlayerData(this.players, true).then(_ => {
-      $('#saved-game-user-feedback').css('display', 'inline');
+    this.golfService.writeToPlayerData(this.players, true).then((_) => {
+      $("#saved-game-user-feedback").css("display", "inline");
       setTimeout(() => {
-        $('#saved-game-user-feedback').css('display', 'none');
+        $("#saved-game-user-feedback").css("display", "none");
       }, 2000);
     });
   }
