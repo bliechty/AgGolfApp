@@ -1,22 +1,17 @@
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation,
-  OnDestroy,
-  ɵCodegenComponentFactoryResolver,
-} from "@angular/core";
-import { GolfService } from "../golf.service";
-import { Data } from "src/app/interfaces/data";
-import { Hole } from "src/app/interfaces/hole";
-import { Player } from "src/app/interfaces/player";
-import { OtherInfo } from "../../interfaces/otherinfo";
-import { Subscription } from "rxjs";
-import { tap, map } from "rxjs/operators";
+import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
+import { GolfService } from '../golf.service';
+import { Data } from 'src/app/interfaces/data';
+import { Hole } from 'src/app/interfaces/hole';
+import { Player } from 'src/app/interfaces/player';
+import { OtherInfo } from '../../interfaces/otherinfo';
+import { Subscription } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { DuplicateNamePipe } from 'src/app/pipes/duplicate-name.pipe';
 
 @Component({
-  selector: "app-golf-scorecard",
-  templateUrl: "./golf-scorecard.component.html",
-  styleUrls: ["./golf-scorecard.component.css"],
+  selector: 'app-golf-scorecard',
+  templateUrl: './golf-scorecard.component.html',
+  styleUrls: ['./golf-scorecard.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class GolfScorecardComponent implements OnInit, OnDestroy {
@@ -52,7 +47,15 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
 
   getUserInputObservableSubscription: Subscription;
 
-  constructor(private golfService: GolfService) {}
+  error: boolean = false;
+  errorMessage: string;
+
+  playerResults: string[] = [];
+
+  constructor(
+    private golfService: GolfService,
+    private duplicateNamePipe: DuplicateNamePipe
+  ) {}
 
   ngOnInit(): void {
     this.getUserInputObservableSubscription = this.golfService
@@ -72,7 +75,6 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
           .getPlayerData()
           .pipe(
             tap((players) => {
-              console.log("shouldn't be here more than once");
               this.players = this.sanitizeScores(players).map((player) => {
                 return {
                   ...player,
@@ -129,26 +131,26 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
   }
 
   loseFocus($event): void {
-    $event.target.value = "";
-    $(".error").css("display", "none");
-    $(".error").html("");
+    $event.target.value = '';
+    this.error = false;
+    this.errorMessage = '';
   }
 
   enterScore($event, holeNum, playerIndex) {
     const player: Player = this.players[playerIndex];
-    $(".error").css("display", "none");
-    $(".error").html("");
-    if ($event.key === "Enter") {
+    this.error = false;
+    this.errorMessage = '';
+    if ($event.key === 'Enter') {
       const numInput = Number($event.target.value);
       if (Number.isInteger(numInput) && numInput > 0) {
         this.updateScores(holeNum, numInput, player);
         $event.target.placeholder = numInput;
-        $event.target.value = "";
+        $event.target.value = '';
         this.isFinished(playerIndex);
       } else {
-        $event.target.value = "";
-        $(".error").css("display", "block");
-        $(".error").html("That is not a valid input");
+        $event.target.value = '';
+        this.error = true;
+        this.errorMessage = 'That is not a valid input';
       }
     }
   }
@@ -189,26 +191,27 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
 
   enterPlayerName($event, playerIndex) {
     const value = $event.target.value;
-    $(".error").css("display", "none");
-    $(".error").html("");
-    if ($event.key === "Enter") {
-      if (value === "") {
-        $(".error").css("display", "block");
-        $(".error").html("Name cannot be empty");
-      } else if (this.duplicate(value)) {
-        $(".error").css("display", "block");
-        $(".error").html("Duplicate name, try again");
+    this.error = false;
+    this.errorMessage = '';
+    if ($event.key === 'Enter') {
+      if (value === '') {
+        this.error = true;
+        this.errorMessage = 'Name cannot be empty';
+      } else if (
+        this.duplicateNamePipe.transform(
+          value,
+          this.players.map((player) => player.name)
+        )
+      ) {
+        this.error = true;
+        this.errorMessage = 'Duplicate name, try again';
       } else {
         this.players[playerIndex].name = value;
         $event.target.placeholder = value;
         this.isFinished(playerIndex);
       }
-      $event.target.value = "";
+      $event.target.value = '';
     }
-  }
-
-  duplicate(name) {
-    return this.players.some((player) => player.name === name);
   }
 
   isFinished(playerIndex) {
@@ -222,57 +225,24 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
     }
 
     if (player.totalScores.length === this.numberOfHoles && check) {
-      let par = Number($("#parTotal").html());
-      let totalScore = this.getScores("total", player);
-      if (player.display === false) {
-        if (par === totalScore) {
-          $(".player-total-score-container").append(`<div id='player${
-            playerIndex + 1
-          }total' class='player-total-score'>
-                        ${player.name}'s score is on par
-                    </div>`);
-        } else if (totalScore > par) {
-          $(".player-total-score-container").append(`<div id='player${
-            playerIndex + 1
-          }total' class='player-total-score'>
-                        ${player.name}'s score is ${
-            totalScore - par
-          } more than par
-                    </div>`);
-        } else {
-          $(".player-total-score-container").append(`<div id='player${
-            playerIndex + 1
-          }total' class='player-total-score'>
-                        ${player.name}'s score is ${
-            par - totalScore
-          } less than par
-                    </div>`);
-        }
-        player.display = true;
+      let par = Number($('#parTotal').html());
+      let totalScore = this.getScores('total', player);
+      if (par === totalScore) {
+        this.playerResults[playerIndex] = `${player.name}'s score is on par`;
+      } else if (totalScore > par) {
+        this.playerResults[playerIndex] = `${player.name}'s score is ${totalScore - par} more than par`;
       } else {
-        if (par === totalScore) {
-          $(`#player${playerIndex + 1}total`).html(
-            `${player.name}'s score is on par`
-          );
-        } else if (totalScore > par) {
-          $(`#player${playerIndex + 1}total`).html(
-            `${player.name}'s score is ${totalScore - par} more than par`
-          );
-        } else {
-          $(`#player${playerIndex + 1}total`).html(
-            `${player.name}'s score is ${par - totalScore} less than par`
-          );
-        }
+        this.playerResults[playerIndex] = `${player.name}'s score is ${par - totalScore} less than par`;
       }
     }
   }
 
   getScores(type, player) {
-    if (type === "in") {
+    if (type === 'in') {
       return player.inScores.reduce((previous, current) => previous + current);
-    } else if (type === "out") {
+    } else if (type === 'out') {
       return player.outScores.reduce((previous, current) => previous + current);
-    } else if (type === "total") {
+    } else if (type === 'total') {
       return player.totalScores.reduce(
         (previous, current) => previous + current
       );
@@ -281,9 +251,9 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
 
   saveCurrentGameInfo(): void {
     this.golfService.writeToPlayerData(this.players, true).then((_) => {
-      $("#saved-game-user-feedback").css("display", "inline");
+      $('#saved-game-user-feedback').css('display', 'inline');
       setTimeout(() => {
-        $("#saved-game-user-feedback").css("display", "none");
+        $('#saved-game-user-feedback').css('display', 'none');
       }, 2000);
     });
   }

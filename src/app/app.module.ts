@@ -16,7 +16,7 @@ import { SharedModule } from './shared/shared.module';
     declarations: [
         AppComponent,
         HomeComponent,
-        NavBarComponent
+        NavBarComponent,
     ],
     imports: [
         BrowserModule,
@@ -25,7 +25,7 @@ import { SharedModule } from './shared/shared.module';
         GolfRoutingModule,
         AppRoutingModule,
         GolfModule,
-        SharedModule
+        SharedModule,
     ],
     bootstrap: [AppComponent]
 })
