@@ -255,6 +255,11 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
   }
 
   saveCurrentGameInfo(): void {
-    this.golfService.writeToPlayerData(this.players, true);
+    this.golfService.writeToPlayerData(this.players, true).then(_ => {
+      $('#saved-game-user-feedback').css('display', 'inline');
+      setTimeout(() => {
+        $('#saved-game-user-feedback').css('display', 'none');
+      }, 2000);
+    });
   }
 }

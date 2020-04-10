@@ -74,7 +74,7 @@ input[type="text"]::placeholder {
   margin: 20px 5px;
   height: auto;
 }
-.container .info .player-total-score-container .player-total-score {
+.container .info .player-total-score-container .player-total-score, #saved-game-user-feedback {
   width: 300px;
   height: 30px;
   background-color: limegreen;
@@ -157,4 +157,7 @@ input[type="text"]::placeholder {
 .container .score-card-container .score-card .yardage .scores,
 .container .score-card-container .score-card .yardage .score-boxes {
   width: 80px;
+}
+#saved-game-user-feedback {
+  display: none;
 }
