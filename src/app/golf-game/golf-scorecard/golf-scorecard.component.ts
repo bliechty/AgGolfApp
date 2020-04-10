@@ -61,16 +61,32 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
 
       this.producePlaceholderArrays();
       this.produceOtherScorecardInfo();
-    });
 
-    this.getPlayerDataSubscription = this.golfService.getPlayerData().subscribe(players => {
-      this.players = this.sanitizeScores(players);
+      this.getPlayerDataSubscription = this.golfService.getPlayerData().subscribe(players => {
+        this.players = this.sanitizeScores(players);
+        $(document).ready(() => {
+          for (let i of this.a3) {
+            this.isFinished(i - 1);
+          }
+        });
+      });
     });
   }
 
   ngOnDestroy(): void {
     this.getUserInputObservableSubscription.unsubscribe();
     this.getPlayerDataSubscription.unsubscribe();
+
+    const tempSubscription: Subscription = this.golfService.getPlayerData().subscribe(players => {
+      this.golfService.writeToPlayerData(players.map(player => {
+        return {
+          ...player,
+          display: false
+        }
+      })).then(_ => {
+        tempSubscription.unsubscribe();
+      });
+    });
   }
 
   produceOtherScorecardInfo(): void {
