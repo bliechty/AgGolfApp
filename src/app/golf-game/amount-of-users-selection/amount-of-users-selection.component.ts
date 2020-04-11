@@ -21,7 +21,6 @@ export class AmountOfUsersSelectionComponent implements OnInit {
       for (let i = 0; i < amount; i ++) {
         players.push({
           name: `player${i + 1}`,
-          display: false,
           inScores: [],
           outScores: [],
           totalScores: []

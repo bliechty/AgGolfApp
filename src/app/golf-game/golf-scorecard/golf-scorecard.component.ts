@@ -5,13 +5,12 @@ import { Hole } from "src/app/interfaces/hole";
 import { Player } from "src/app/interfaces/player";
 import { OtherInfo } from "../../interfaces/otherinfo";
 import { Subscription } from "rxjs";
-import { DuplicateNamePipe } from "src/app/pipes/duplicate-name.pipe";
 
 @Component({
   selector: "app-golf-scorecard",
   templateUrl: "./golf-scorecard.component.html",
   styleUrls: ["./golf-scorecard.component.css"],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class GolfScorecardComponent implements OnInit, OnDestroy {
   players: Player[];
@@ -53,8 +52,7 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
   playerResults: string[] = [];
 
   constructor(
-    private golfService: GolfService,
-    private duplicateNamePipe: DuplicateNamePipe
+    private golfService: GolfService
   ) {}
 
   ngOnInit(): void {
@@ -188,14 +186,6 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
       if (value === "") {
         this.error = true;
         this.errorMessage = "Name cannot be empty";
-      } else if (
-        this.duplicateNamePipe.transform(
-          value,
-          this.players.map((player) => player.name)
-        )
-      ) {
-        this.error = true;
-        this.errorMessage = "Duplicate name, try again";
       } else {
         this.players[playerIndex].name = value;
         $event.target.placeholder = value;

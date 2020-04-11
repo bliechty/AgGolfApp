@@ -16,13 +16,15 @@ import { MatDividerModule } from "@angular/material/divider";
 
 import { environment } from "src/environments/environment";
 import { DuplicateNamePipe } from "../pipes/duplicate-name.pipe";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     CourseSelectionComponent,
     AmountOfUsersSelectionComponent,
     GolfScorecardComponent,
-    TeeSelectionComponent
+    TeeSelectionComponent,
+    DuplicateNamePipe
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { DuplicateNamePipe } from "../pipes/duplicate-name.pipe";
     AngularFirestoreModule,
     MatProgressSpinnerModule,
     MatDividerModule,
+    FormsModule
   ],
   providers: [DuplicateNamePipe]
 })
