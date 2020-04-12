@@ -1033,7 +1033,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
           return ctx_r20.loseFocus($event);
-        })("keyup", function GolfScorecardComponent_div_2_input_9_Template_input_keyup_0_listener($event) {
+        })("keyup.enter", function GolfScorecardComponent_div_2_input_9_Template_input_keyup_enter_0_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21);
 
           var i_r19 = ctx.$implicit;
@@ -1053,7 +1053,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](1, 1, ctx_r11.players[i_r19 - 1].name, ctx_r11.players, i_r19 - 1));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](1, 1, ctx_r11.players[i_r19 - 1].name, ctx_r11.playerNames, i_r19 - 1));
       }
     }
 
@@ -1696,6 +1696,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         this.error = false;
         this.playerResults = [];
+        this.playerNames = [];
       }
 
       _createClass(GolfScorecardComponent, [{
@@ -1717,6 +1718,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this4.getPlayerDataSubscription = _this4.golfService.getPlayerData().subscribe(function (players) {
               _this4.players = _this4.sanitizeScores(players);
+              _this4.playerNames = _this4.players.map(function (player) {
+                return player.name;
+              });
               $(document).ready(function () {
                 var _iterator = _createForOfIteratorHelper(_this4.a3),
                     _step;
@@ -1859,18 +1863,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.error = false;
           this.errorMessage = "";
 
-          if ($event.key === "Enter") {
-            if (value === "") {
-              this.error = true;
-              this.errorMessage = "Name cannot be empty";
-            } else {
-              this.players[playerIndex].name = value;
-              $event.target.placeholder = value;
-              this.isFinished(playerIndex);
-            }
-
-            $event.target.value = "";
+          if (value === "") {
+            this.error = true;
+            this.errorMessage = "Name cannot be empty";
+          } else {
+            this.players[playerIndex].name = value;
+            $event.target.placeholder = value;
+            this.isFinished(playerIndex);
           }
+
+          $event.target.value = "";
         }
       }, {
         key: "isFinished",
@@ -1922,7 +1924,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.golfService.writeToPlayerData(this.players.map(function (player, i) {
             return Object.assign(Object.assign({}, player), {
-              name: _this5.form.nativeElement.elements[i].placeholder
+              name: _this5.playerNames[i]
             });
           }), true).then(function (_) {
             $("#saved-game-user-feedback").css("display", "inline");
@@ -1956,7 +1958,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       decls: 3,
       vars: 2,
-      consts: [["id", "mat-card-container"], ["id", "mat-card", 4, "ngIf"], ["class", "container", 4, "ngIf"], ["id", "mat-card"], [1, "container"], [1, "score-card-container"], [1, "score-card"], [1, "holes"], ["id", "first-column"], [1, "firstColumn"], ["form", ""], ["type", "text", "class", "firstColumn playerName", 3, "placeholder", "blur", "keyup", 4, "ngFor", "ngForOf"], ["class", "col", 3, "id", 4, "ngFor", "ngForOf"], ["id", "out-score", 1, "scores"], [1, "score-boxes"], ["class", "score-boxes", 3, "id", 4, "ngFor", "ngForOf"], ["id", "in-score", 1, "scores"], ["id", "total-score", 1, "scores"], ["id", "parTotal", 1, "score-boxes"], [1, "info"], [1, "error-container"], ["class", "error", 4, "ngIf"], [1, "player-total-score-container"], [4, "ngFor", "ngForOf"], [1, "options"], ["mat-raised-button", "", 3, "click"], ["id", "saved-game-user-feedback"], ["type", "text", 1, "firstColumn", "playerName", 3, "placeholder", "blur", "keyup"], [1, "col", 3, "id"], [1, "boxes"], ["type", "text", "class", "boxes playerScore", 3, "id", "placeholder", "keyup", "blur", 4, "ngFor", "ngForOf"], ["type", "text", 1, "boxes", "playerScore", 3, "id", "placeholder", "keyup", "blur"], [1, "score-boxes", 3, "id"], [1, "error"], ["class", "player-total-score", 4, "ngIf"], [1, "player-total-score"]],
+      consts: [["id", "mat-card-container"], ["id", "mat-card", 4, "ngIf"], ["class", "container", 4, "ngIf"], ["id", "mat-card"], [1, "container"], [1, "score-card-container"], [1, "score-card"], [1, "holes"], ["id", "first-column"], [1, "firstColumn"], ["form", ""], ["type", "text", "class", "firstColumn playerName", 3, "placeholder", "blur", "keyup.enter", 4, "ngFor", "ngForOf"], ["class", "col", 3, "id", 4, "ngFor", "ngForOf"], ["id", "out-score", 1, "scores"], [1, "score-boxes"], ["class", "score-boxes", 3, "id", 4, "ngFor", "ngForOf"], ["id", "in-score", 1, "scores"], ["id", "total-score", 1, "scores"], ["id", "parTotal", 1, "score-boxes"], [1, "info"], [1, "error-container"], ["class", "error", 4, "ngIf"], [1, "player-total-score-container"], [4, "ngFor", "ngForOf"], [1, "options"], ["mat-raised-button", "", 3, "click"], ["id", "saved-game-user-feedback"], ["type", "text", 1, "firstColumn", "playerName", 3, "placeholder", "blur", "keyup.enter"], [1, "col", 3, "id"], [1, "boxes"], ["type", "text", "class", "boxes playerScore", 3, "id", "placeholder", "keyup", "blur", 4, "ngFor", "ngForOf"], ["type", "text", 1, "boxes", "playerScore", 3, "id", "placeholder", "keyup", "blur"], [1, "score-boxes", 3, "id"], [1, "error"], ["class", "player-total-score", 4, "ngIf"], [1, "player-total-score"]],
       template: function GolfScorecardComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -2844,12 +2846,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(DuplicateNamePipe, [{
         key: "transform",
-        value: function transform(value, players, playerIndex) {
+        value: function transform(value, playerNames, playerIndex) {
           var check = false;
           var name = value;
-          var playerNames = players.map(function (player) {
-            return player.name;
-          });
 
           while (!check) {
             if (playerNames.some(function (n, i) {
@@ -2865,6 +2864,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }
 
+          playerNames[playerIndex] = name;
           return name;
         }
       }]);

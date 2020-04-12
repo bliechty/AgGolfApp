@@ -603,13 +603,13 @@ function GolfScorecardComponent_mat_card_1_Template(rf, ctx) { if (rf & 1) {
 function GolfScorecardComponent_div_2_input_9_Template(rf, ctx) { if (rf & 1) {
     const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("blur", function GolfScorecardComponent_div_2_input_9_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21); const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r20.loseFocus($event); })("keyup", function GolfScorecardComponent_div_2_input_9_Template_input_keyup_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21); const i_r19 = ctx.$implicit; const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r22.enterPlayerName($event, i_r19 - 1); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("blur", function GolfScorecardComponent_div_2_input_9_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21); const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r20.loseFocus($event); })("keyup.enter", function GolfScorecardComponent_div_2_input_9_Template_input_keyup_enter_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21); const i_r19 = ctx.$implicit; const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r22.enterPlayerName($event, i_r19 - 1); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "duplicateName");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const i_r19 = ctx.$implicit;
     const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](1, 1, ctx_r11.players[i_r19 - 1].name, ctx_r11.players, i_r19 - 1));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](1, 1, ctx_r11.players[i_r19 - 1].name, ctx_r11.playerNames, i_r19 - 1));
 } }
 function GolfScorecardComponent_div_2_div_16_input_3_Template(rf, ctx) { if (rf & 1) {
     const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -921,6 +921,7 @@ class GolfScorecardComponent {
         };
         this.error = false;
         this.playerResults = [];
+        this.playerNames = [];
     }
     ngOnInit() {
         this.getUserInputObservableSubscription = this.golfService
@@ -938,6 +939,7 @@ class GolfScorecardComponent {
                 .getPlayerData()
                 .subscribe((players) => {
                 this.players = this.sanitizeScores(players);
+                this.playerNames = this.players.map(player => player.name);
                 $(document).ready(() => {
                     for (let i of this.a3) {
                         this.isFinished(i - 1);
@@ -1037,18 +1039,16 @@ class GolfScorecardComponent {
         const value = $event.target.value;
         this.error = false;
         this.errorMessage = "";
-        if ($event.key === "Enter") {
-            if (value === "") {
-                this.error = true;
-                this.errorMessage = "Name cannot be empty";
-            }
-            else {
-                this.players[playerIndex].name = value;
-                $event.target.placeholder = value;
-                this.isFinished(playerIndex);
-            }
-            $event.target.value = "";
+        if (value === "") {
+            this.error = true;
+            this.errorMessage = "Name cannot be empty";
         }
+        else {
+            this.players[playerIndex].name = value;
+            $event.target.placeholder = value;
+            this.isFinished(playerIndex);
+        }
+        $event.target.value = "";
     }
     isFinished(playerIndex) {
         const player = this.players[playerIndex];
@@ -1086,7 +1086,7 @@ class GolfScorecardComponent {
     }
     saveCurrentGameInfo() {
         this.golfService.writeToPlayerData(this.players.map((player, i) => {
-            return Object.assign(Object.assign({}, player), { name: this.form.nativeElement.elements[i].placeholder });
+            return Object.assign(Object.assign({}, player), { name: this.playerNames[i] });
         }), true).then((_) => {
             $("#saved-game-user-feedback").css("display", "inline");
             setTimeout(() => {
@@ -1101,7 +1101,7 @@ GolfScorecardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
     } if (rf & 2) {
         var _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.form = _t.first);
-    } }, decls: 3, vars: 2, consts: [["id", "mat-card-container"], ["id", "mat-card", 4, "ngIf"], ["class", "container", 4, "ngIf"], ["id", "mat-card"], [1, "container"], [1, "score-card-container"], [1, "score-card"], [1, "holes"], ["id", "first-column"], [1, "firstColumn"], ["form", ""], ["type", "text", "class", "firstColumn playerName", 3, "placeholder", "blur", "keyup", 4, "ngFor", "ngForOf"], ["class", "col", 3, "id", 4, "ngFor", "ngForOf"], ["id", "out-score", 1, "scores"], [1, "score-boxes"], ["class", "score-boxes", 3, "id", 4, "ngFor", "ngForOf"], ["id", "in-score", 1, "scores"], ["id", "total-score", 1, "scores"], ["id", "parTotal", 1, "score-boxes"], [1, "info"], [1, "error-container"], ["class", "error", 4, "ngIf"], [1, "player-total-score-container"], [4, "ngFor", "ngForOf"], [1, "options"], ["mat-raised-button", "", 3, "click"], ["id", "saved-game-user-feedback"], ["type", "text", 1, "firstColumn", "playerName", 3, "placeholder", "blur", "keyup"], [1, "col", 3, "id"], [1, "boxes"], ["type", "text", "class", "boxes playerScore", 3, "id", "placeholder", "keyup", "blur", 4, "ngFor", "ngForOf"], ["type", "text", 1, "boxes", "playerScore", 3, "id", "placeholder", "keyup", "blur"], [1, "score-boxes", 3, "id"], [1, "error"], ["class", "player-total-score", 4, "ngIf"], [1, "player-total-score"]], template: function GolfScorecardComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 3, vars: 2, consts: [["id", "mat-card-container"], ["id", "mat-card", 4, "ngIf"], ["class", "container", 4, "ngIf"], ["id", "mat-card"], [1, "container"], [1, "score-card-container"], [1, "score-card"], [1, "holes"], ["id", "first-column"], [1, "firstColumn"], ["form", ""], ["type", "text", "class", "firstColumn playerName", 3, "placeholder", "blur", "keyup.enter", 4, "ngFor", "ngForOf"], ["class", "col", 3, "id", 4, "ngFor", "ngForOf"], ["id", "out-score", 1, "scores"], [1, "score-boxes"], ["class", "score-boxes", 3, "id", 4, "ngFor", "ngForOf"], ["id", "in-score", 1, "scores"], ["id", "total-score", 1, "scores"], ["id", "parTotal", 1, "score-boxes"], [1, "info"], [1, "error-container"], ["class", "error", 4, "ngIf"], [1, "player-total-score-container"], [4, "ngFor", "ngForOf"], [1, "options"], ["mat-raised-button", "", 3, "click"], ["id", "saved-game-user-feedback"], ["type", "text", 1, "firstColumn", "playerName", 3, "placeholder", "blur", "keyup.enter"], [1, "col", 3, "id"], [1, "boxes"], ["type", "text", "class", "boxes playerScore", 3, "id", "placeholder", "keyup", "blur", 4, "ngFor", "ngForOf"], ["type", "text", 1, "boxes", "playerScore", 3, "id", "placeholder", "keyup", "blur"], [1, "score-boxes", 3, "id"], [1, "error"], ["class", "player-total-score", 4, "ngIf"], [1, "player-total-score"]], template: function GolfScorecardComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, GolfScorecardComponent_mat_card_1_Template, 3, 1, "mat-card", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1533,10 +1533,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class DuplicateNamePipe {
-    transform(value, players, playerIndex) {
+    transform(value, playerNames, playerIndex) {
         let check = false;
         let name = value;
-        const playerNames = players.map(player => player.name);
         while (!check) {
             if (playerNames.some((n, i) => {
                 if (i !== playerIndex) {
@@ -1552,6 +1551,7 @@ class DuplicateNamePipe {
                 check = true;
             }
         }
+        playerNames[playerIndex] = name;
         return name;
     }
 }
