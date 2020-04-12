@@ -10,7 +10,8 @@
           <div class="holes">
             <div id="first-column">
               <div class="firstColumn">Hole</div>
-              <input
+              <form #form>
+                <input
                 *ngFor="let i of a3"
                 type="text"
                 class="firstColumn playerName"
@@ -18,6 +19,7 @@
                 (blur)="loseFocus($event)"
                 (keyup)="enterPlayerName($event, i - 1)"
               >
+              </form>
               <div class="firstColumn">Par</div>
               <div class="firstColumn">Handicap</div>
               <div class="firstColumn">Yardage</div>

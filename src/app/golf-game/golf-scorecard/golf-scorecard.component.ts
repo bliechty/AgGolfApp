@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation, OnDestroy, ViewChild, ElementRef } from "@angular/core";
 import { GolfService } from "../golf.service";
 import { Data } from "src/app/interfaces/data";
 import { Hole } from "src/app/interfaces/hole";
@@ -50,6 +50,8 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
   errorMessage: string;
 
   playerResults: string[] = [];
+
+  @ViewChild('form') form: ElementRef;
 
   constructor(
     private golfService: GolfService
@@ -235,7 +237,12 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
   }
 
   saveCurrentGameInfo(): void {
-    this.golfService.writeToPlayerData(this.players, true).then((_) => {
+    this.golfService.writeToPlayerData(this.players.map((player, i) => {
+      return {
+        ...player,
+        name: this.form.nativeElement.elements[i].placeholder
+      }
+    }), true).then((_) => {
       $("#saved-game-user-feedback").css("display", "inline");
       setTimeout(() => {
         $("#saved-game-user-feedback").css("display", "none");
