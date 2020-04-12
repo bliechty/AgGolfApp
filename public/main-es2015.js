@@ -23,6 +23,122 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/app-data/names.ts":
+/*!***********************************!*\
+  !*** ./src/app/app-data/names.ts ***!
+  \***********************************/
+/*! exports provided: names */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "names", function() { return names; });
+const names = [
+    "Sage O. Ruiz",
+    "Sacha L. Briggs",
+    "Stone C. Zimmerman",
+    "Otto S. Arnold",
+    "Evangeline B. Mccoy",
+    "Dorothy O. Ellis",
+    "Wang R. Zimmerman",
+    "Xander R. Cunningham",
+    "Kevin D. Sanders",
+    "Marah G. Bright",
+    "Stewart J. Alvarado",
+    "Jesse C. Mckee",
+    "Tanek Z. Delgado",
+    "Doris S. Gallagher",
+    "Melodie C. Howe",
+    "Isaac S. Haney",
+    "Guinevere F. Solomon",
+    "Tara W. Hampton",
+    "Zachary P. Perry",
+    "Rafael V. Burnett",
+    "Cassandra T. Ball",
+    "Peter L. Cruz",
+    "Merritt D. Mcclure",
+    "Wynne S. Santiago",
+    "Neil R. Mathews",
+    "Ignacia B. Velez",
+    "Samson P. Hess",
+    "Nichole Z. Frederick",
+    "Ifeoma E. Roman",
+    "Lacy K. Ingram",
+    "Orson K. Tran",
+    "Lacota G. Adams",
+    "Ezekiel G. Duffy",
+    "Genevieve Z. Sims",
+    "Colleen U. Sanders",
+    "Amity J. Battle",
+    "Chastity F. Church",
+    "Katell F. Marshall",
+    "Arden F. Parsons",
+    "Alisa E. Gonzales",
+    "Aristotle M. Clay",
+    "Evelyn A. Ferguson",
+    "Halee C. Long",
+    "Heather F. Gordon",
+    "Alice V. Middleton",
+    "Kylynn S. Stout",
+    "Devin C. Mann",
+    "Montana R. Ayers",
+    "Hammett X. Olsen",
+    "Kaden V. Cain",
+    "Cheryl K. Lester",
+    "Nicholas E. Savage",
+    "Dara Y. Garcia",
+    "Todd L. Strong",
+    "Ferdinand O. Aguirre",
+    "Kyle X. Richards",
+    "Kareem V. Mckinney",
+    "Anika M. Greene",
+    "Madonna A. Maynard",
+    "Minerva S. Sellers",
+    "Tatyana N. Mills",
+    "September T. Caldwell",
+    "Zenia X. Fisher",
+    "Penelope L. Sweet",
+    "Brielle R. Sexton",
+    "Philip G. Small",
+    "Anastasia G. Edwards",
+    "Colorado U. Cantu",
+    "Iola I. Monroe",
+    "Nicholas T. Howard",
+    "Kathleen K. Bradford",
+    "Dominic S. Ortiz",
+    "Phelan V. Barker",
+    "Gloria R. Mitchell",
+    "Bell W. Gibson",
+    "Duncan E. Cook",
+    "Raja O. Henson",
+    "Quinn N. Chaney",
+    "Lester N. Lang",
+    "Cara Z. Fleming",
+    "Alyssa Y. Mcdonald",
+    "Tashya V. Harper",
+    "Judith X. Head",
+    "Eagan G. Bryan",
+    "Louis Y. Perry",
+    "Amos W. Mayer",
+    "Louis Q. Gamble",
+    "Kyla I. Beard",
+    "Adara H. Miranda",
+    "Raja E. Soto",
+    "Hoyt U. Ochoa",
+    "Xanthus Z. Poole",
+    "Celeste J. Mccall",
+    "Rama H. Hyde",
+    "Levi Q. Foley",
+    "Rhoda P. May",
+    "Lacey A. Curry",
+    "Bevis T. Durham",
+    "Gabriel D. Nichols",
+    "Guinevere J. Lowery",
+];
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -212,7 +328,6 @@ class AmountOfUsersSelectionComponent {
             for (let i = 0; i < amount; i++) {
                 players.push({
                     name: `player${i + 1}`,
-                    display: false,
                     inScores: [],
                     outScores: [],
                     totalScores: []
@@ -460,10 +575,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GolfScorecardComponent", function() { return GolfScorecardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _golf_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../golf.service */ "./src/app/golf-game/golf.service.ts");
-/* harmony import */ var src_app_pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/pipes/duplicate-name.pipe */ "./src/app/pipes/duplicate-name.pipe.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/card.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/card.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
+/* harmony import */ var _pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../pipes/duplicate-name.pipe */ "./src/app/pipes/duplicate-name.pipe.ts");
 
 
 
@@ -471,6 +587,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const _c0 = ["form"];
 function GolfScorecardComponent_mat_card_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card-title");
@@ -482,166 +600,167 @@ function GolfScorecardComponent_mat_card_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r8.selectedCourseName);
 } }
-function GolfScorecardComponent_div_2_input_7_Template(rf, ctx) { if (rf & 1) {
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("blur", function GolfScorecardComponent_div_2_input_7_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r20); const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r19.loseFocus($event); })("keyup", function GolfScorecardComponent_div_2_input_7_Template_input_keyup_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r20); const i_r18 = ctx.$implicit; const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r21.enterPlayerName($event, i_r18 - 1); });
+function GolfScorecardComponent_div_2_input_9_Template(rf, ctx) { if (rf & 1) {
+    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("blur", function GolfScorecardComponent_div_2_input_9_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21); const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r20.loseFocus($event); })("keyup", function GolfScorecardComponent_div_2_input_9_Template_input_keyup_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r21); const i_r19 = ctx.$implicit; const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r22.enterPlayerName($event, i_r19 - 1); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "duplicateName");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const i_r18 = ctx.$implicit;
-    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", ctx_r10.players[i_r18 - 1].name);
-} }
-function GolfScorecardComponent_div_2_div_14_input_3_Template(rf, ctx) { if (rf & 1) {
-    const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function GolfScorecardComponent_div_2_div_14_input_3_Template_input_keyup_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r26); const j_r24 = ctx.$implicit; const i_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r25.enterScore($event, i_r22 - 1, j_r24 - 1); })("blur", function GolfScorecardComponent_div_2_div_14_input_3_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r26); const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r28.loseFocus($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const j_r24 = ctx.$implicit;
-    const i_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate2"]("id", "p", j_r24, "h", i_r22, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", ctx_r23.players[j_r24 - 1].outScores[i_r22 - 1] === null ? "" : ctx_r23.players[j_r24 - 1].outScores[i_r22 - 1]);
-} }
-function GolfScorecardComponent_div_2_div_14_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, GolfScorecardComponent_div_2_div_14_input_3_Template, 1, 3, "input", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const i_r22 = ctx.$implicit;
+    const i_r19 = ctx.$implicit;
     const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "col", i_r22, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](i_r22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r11.a3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r11.holesArray[i_r22 - 1].teeBoxes[0].par);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r11.holesArray[i_r22 - 1].teeBoxes[0].hcp);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r11.holesArray[i_r22 - 1].teeBoxes[ctx_r11.teeSelection].yards);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](1, 1, ctx_r11.players[i_r19 - 1].name, ctx_r11.players, i_r19 - 1));
 } }
-function GolfScorecardComponent_div_2_div_18_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+function GolfScorecardComponent_div_2_div_16_input_3_Template(rf, ctx) { if (rf & 1) {
+    const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function GolfScorecardComponent_div_2_div_16_input_3_Template_input_keyup_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r27); const j_r25 = ctx.$implicit; const i_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r26.enterScore($event, i_r23 - 1, j_r25 - 1); })("blur", function GolfScorecardComponent_div_2_div_16_input_3_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r27); const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r29.loseFocus($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const i_r30 = ctx.$implicit;
-    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "outscore", i_r30, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r12.getScores("out", ctx_r12.players[i_r30 - 1]) === 0 ? "" : ctx_r12.getScores("out", ctx_r12.players[i_r30 - 1]), " ");
+    const j_r25 = ctx.$implicit;
+    const i_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate2"]("id", "p", j_r25, "h", i_r23, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", ctx_r24.players[j_r25 - 1].outScores[i_r23 - 1] === null ? "" : ctx_r24.players[j_r25 - 1].outScores[i_r23 - 1]);
 } }
-function GolfScorecardComponent_div_2_div_25_input_3_Template(rf, ctx) { if (rf & 1) {
-    const _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function GolfScorecardComponent_div_2_div_25_input_3_Template_input_keyup_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r35); const j_r33 = ctx.$implicit; const i_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r34.enterScore($event, i_r31 - 1, j_r33 - 1); })("blur", function GolfScorecardComponent_div_2_div_25_input_3_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r35); const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r37.loseFocus($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const j_r33 = ctx.$implicit;
-    const i_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate2"]("id", "p", j_r33, "h", i_r31, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", ctx_r32.players[j_r33 - 1].inScores[i_r31 - ctx_r32.numberOfHoles / 2 - 1] === null ? "" : ctx_r32.players[j_r33 - 1].inScores[i_r31 - ctx_r32.numberOfHoles / 2 - 1]);
-} }
-function GolfScorecardComponent_div_2_div_25_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 28);
+function GolfScorecardComponent_div_2_div_16_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, GolfScorecardComponent_div_2_div_25_input_3_Template, 1, 3, "input", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, GolfScorecardComponent_div_2_div_16_input_3_Template, 1, 3, "input", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const i_r23 = ctx.$implicit;
+    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "col", i_r23, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](i_r23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r12.a3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r12.holesArray[i_r23 - 1].teeBoxes[0].par);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r12.holesArray[i_r23 - 1].teeBoxes[0].hcp);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r12.holesArray[i_r23 - 1].teeBoxes[ctx_r12.teeSelection].yards);
+} }
+function GolfScorecardComponent_div_2_div_20_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const i_r31 = ctx.$implicit;
     const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "col", i_r31, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](i_r31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "outscore", i_r31, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r13.a3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r13.holesArray[i_r31 - 1].teeBoxes[0].par);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r13.holesArray[i_r31 - 1].teeBoxes[0].hcp);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r13.holesArray[i_r31 - 1].teeBoxes[ctx_r13.teeSelection].yards);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r13.getScores("out", ctx_r13.players[i_r31 - 1]) === 0 ? "" : ctx_r13.getScores("out", ctx_r13.players[i_r31 - 1]), " ");
 } }
-function GolfScorecardComponent_div_2_div_29_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+function GolfScorecardComponent_div_2_div_27_input_3_Template(rf, ctx) { if (rf & 1) {
+    const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function GolfScorecardComponent_div_2_div_27_input_3_Template_input_keyup_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r36); const j_r34 = ctx.$implicit; const i_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r35.enterScore($event, i_r32 - 1, j_r34 - 1); })("blur", function GolfScorecardComponent_div_2_div_27_input_3_Template_input_blur_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r36); const ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r38.loseFocus($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const i_r39 = ctx.$implicit;
-    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "inscore", i_r39, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r14.getScores("in", ctx_r14.players[i_r39 - 1]) === 0 ? "" : ctx_r14.getScores("in", ctx_r14.players[i_r39 - 1]), " ");
+    const j_r34 = ctx.$implicit;
+    const i_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate2"]("id", "p", j_r34, "h", i_r32, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", ctx_r33.players[j_r34 - 1].inScores[i_r32 - ctx_r33.numberOfHoles / 2 - 1] === null ? "" : ctx_r33.players[j_r34 - 1].inScores[i_r32 - ctx_r33.numberOfHoles / 2 - 1]);
 } }
-function GolfScorecardComponent_div_2_div_39_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 31);
+function GolfScorecardComponent_div_2_div_27_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, GolfScorecardComponent_div_2_div_27_input_3_Template, 1, 3, "input", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const i_r32 = ctx.$implicit;
+    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "col", i_r32, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](i_r32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r14.a3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r14.holesArray[i_r32 - 1].teeBoxes[0].par);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r14.holesArray[i_r32 - 1].teeBoxes[0].hcp);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r14.holesArray[i_r32 - 1].teeBoxes[ctx_r14.teeSelection].yards);
+} }
+function GolfScorecardComponent_div_2_div_31_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const i_r40 = ctx.$implicit;
     const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "totalscore", i_r40, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "inscore", i_r40, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r15.getScores("total", ctx_r15.players[i_r40 - 1]) === 0 ? "" : ctx_r15.getScores("total", ctx_r15.players[i_r40 - 1]), " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r15.getScores("in", ctx_r15.players[i_r40 - 1]) === 0 ? "" : ctx_r15.getScores("in", ctx_r15.players[i_r40 - 1]), " ");
 } }
-function GolfScorecardComponent_div_2_div_50_Template(rf, ctx) { if (rf & 1) {
+function GolfScorecardComponent_div_2_div_41_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
+    const i_r41 = ctx.$implicit;
     const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "totalscore", i_r41, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r16.errorMessage, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r16.getScores("total", ctx_r16.players[i_r41 - 1]) === 0 ? "" : ctx_r16.getScores("total", ctx_r16.players[i_r41 - 1]), " ");
 } }
-function GolfScorecardComponent_div_2_div_54_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 34);
+function GolfScorecardComponent_div_2_div_52_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const i_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    const ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r42.playerResults[i_r41 - 1]);
-} }
-function GolfScorecardComponent_div_2_div_54_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, GolfScorecardComponent_div_2_div_54_div_1_Template, 2, 1, "div", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const i_r41 = ctx.$implicit;
     const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r17.playerResults[i_r41 - 1]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r17.errorMessage, " ");
+} }
+function GolfScorecardComponent_div_2_div_56_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const i_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r43.playerResults[i_r42 - 1]);
+} }
+function GolfScorecardComponent_div_2_div_56_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, GolfScorecardComponent_div_2_div_56_div_1_Template, 2, 1, "div", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const i_r42 = ctx.$implicit;
+    const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r18.playerResults[i_r42 - 1]);
 } }
 function GolfScorecardComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r46 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 6);
@@ -650,99 +769,101 @@ function GolfScorecardComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Hole");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, GolfScorecardComponent_div_2_input_7_Template, 1, 1, "input", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Par");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "form", null, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, GolfScorecardComponent_div_2_input_9_Template, 2, 5, "input", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Handicap");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Par");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Yardage");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Handicap");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Yardage");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, GolfScorecardComponent_div_2_div_14_Template, 10, 6, "div", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Out");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, GolfScorecardComponent_div_2_div_16_Template, 10, 6, "div", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Out");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, GolfScorecardComponent_div_2_div_18_Template, 2, 2, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](20, GolfScorecardComponent_div_2_div_20_Template, 2, 2, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, GolfScorecardComponent_div_2_div_25_Template, 10, 6, "div", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "In");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, GolfScorecardComponent_div_2_div_29_Template, 2, 2, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, GolfScorecardComponent_div_2_div_27_Template, 10, 6, "div", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, "In");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, GolfScorecardComponent_div_2_div_31_Template, 2, 2, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Total");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](39, GolfScorecardComponent_div_2_div_39_Template, 2, 2, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "Total");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](41, GolfScorecardComponent_div_2_div_41_Template, 2, 2, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "h3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "Errors (Shows on invalid input):");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](50, GolfScorecardComponent_div_2_div_50_Template, 2, 1, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "h3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Errors (Shows on invalid input):");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "h3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, "Player Results (Shows when a player has put in all scores):");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](52, GolfScorecardComponent_div_2_div_52_Template, 2, 1, "div", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](54, GolfScorecardComponent_div_2_div_54_Template, 2, 1, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "h3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Player Results (Shows when a player has put in all scores):");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "h3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Options:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](56, GolfScorecardComponent_div_2_div_56_Template, 2, 1, "div", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "button", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GolfScorecardComponent_div_2_Template_button_click_59_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r44.saveCurrentGameInfo(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, "Save Current Game Info");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "h3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "Options:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "button", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GolfScorecardComponent_div_2_Template_button_click_61_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r46); const ctx_r45 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r45.saveCurrentGameInfo(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, "Save Current Game Info");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "span", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, " Successfully saved game! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "span", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, " Successfully saved game! ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r9.a3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r9.a1);
@@ -778,9 +899,8 @@ function GolfScorecardComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r9.a3);
 } }
 class GolfScorecardComponent {
-    constructor(golfService, duplicateNamePipe) {
+    constructor(golfService) {
         this.golfService = golfService;
-        this.duplicateNamePipe = duplicateNamePipe;
         this.a1 = [];
         this.a2 = [];
         this.a3 = [];
@@ -922,10 +1042,6 @@ class GolfScorecardComponent {
                 this.error = true;
                 this.errorMessage = "Name cannot be empty";
             }
-            else if (this.duplicateNamePipe.transform(value, this.players.map((player) => player.name))) {
-                this.error = true;
-                this.errorMessage = "Duplicate name, try again";
-            }
             else {
                 this.players[playerIndex].name = value;
                 $event.target.placeholder = value;
@@ -969,7 +1085,9 @@ class GolfScorecardComponent {
         }
     }
     saveCurrentGameInfo() {
-        this.golfService.writeToPlayerData(this.players, true).then((_) => {
+        this.golfService.writeToPlayerData(this.players.map((player, i) => {
+            return Object.assign(Object.assign({}, player), { name: this.form.nativeElement.elements[i].placeholder });
+        }), true).then((_) => {
             $("#saved-game-user-feedback").css("display", "inline");
             setTimeout(() => {
                 $("#saved-game-user-feedback").css("display", "none");
@@ -977,27 +1095,35 @@ class GolfScorecardComponent {
         });
     }
 }
-GolfScorecardComponent.ɵfac = function GolfScorecardComponent_Factory(t) { return new (t || GolfScorecardComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_golf_service__WEBPACK_IMPORTED_MODULE_1__["GolfService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_2__["DuplicateNamePipe"])); };
-GolfScorecardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GolfScorecardComponent, selectors: [["app-golf-scorecard"]], decls: 3, vars: 2, consts: [["id", "mat-card-container"], ["id", "mat-card", 4, "ngIf"], ["class", "container", 4, "ngIf"], ["id", "mat-card"], [1, "container"], [1, "score-card-container"], [1, "score-card"], [1, "holes"], ["id", "first-column"], [1, "firstColumn"], ["type", "text", "class", "firstColumn playerName", 3, "placeholder", "blur", "keyup", 4, "ngFor", "ngForOf"], ["class", "col", 3, "id", 4, "ngFor", "ngForOf"], ["id", "out-score", 1, "scores"], [1, "score-boxes"], ["class", "score-boxes", 3, "id", 4, "ngFor", "ngForOf"], ["id", "in-score", 1, "scores"], ["id", "total-score", 1, "scores"], ["id", "parTotal", 1, "score-boxes"], [1, "info"], [1, "error-container"], ["class", "error", 4, "ngIf"], [1, "player-total-score-container"], [4, "ngFor", "ngForOf"], [1, "options"], ["mat-raised-button", "", 3, "click"], ["id", "saved-game-user-feedback"], ["type", "text", 1, "firstColumn", "playerName", 3, "placeholder", "blur", "keyup"], [1, "col", 3, "id"], [1, "boxes"], ["type", "text", "class", "boxes playerScore", 3, "id", "placeholder", "keyup", "blur", 4, "ngFor", "ngForOf"], ["type", "text", 1, "boxes", "playerScore", 3, "id", "placeholder", "keyup", "blur"], [1, "score-boxes", 3, "id"], [1, "error"], ["class", "player-total-score", 4, "ngIf"], [1, "player-total-score"]], template: function GolfScorecardComponent_Template(rf, ctx) { if (rf & 1) {
+GolfScorecardComponent.ɵfac = function GolfScorecardComponent_Factory(t) { return new (t || GolfScorecardComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_golf_service__WEBPACK_IMPORTED_MODULE_1__["GolfService"])); };
+GolfScorecardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GolfScorecardComponent, selectors: [["app-golf-scorecard"]], viewQuery: function GolfScorecardComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+    } if (rf & 2) {
+        var _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.form = _t.first);
+    } }, decls: 3, vars: 2, consts: [["id", "mat-card-container"], ["id", "mat-card", 4, "ngIf"], ["class", "container", 4, "ngIf"], ["id", "mat-card"], [1, "container"], [1, "score-card-container"], [1, "score-card"], [1, "holes"], ["id", "first-column"], [1, "firstColumn"], ["form", ""], ["type", "text", "class", "firstColumn playerName", 3, "placeholder", "blur", "keyup", 4, "ngFor", "ngForOf"], ["class", "col", 3, "id", 4, "ngFor", "ngForOf"], ["id", "out-score", 1, "scores"], [1, "score-boxes"], ["class", "score-boxes", 3, "id", 4, "ngFor", "ngForOf"], ["id", "in-score", 1, "scores"], ["id", "total-score", 1, "scores"], ["id", "parTotal", 1, "score-boxes"], [1, "info"], [1, "error-container"], ["class", "error", 4, "ngIf"], [1, "player-total-score-container"], [4, "ngFor", "ngForOf"], [1, "options"], ["mat-raised-button", "", 3, "click"], ["id", "saved-game-user-feedback"], ["type", "text", 1, "firstColumn", "playerName", 3, "placeholder", "blur", "keyup"], [1, "col", 3, "id"], [1, "boxes"], ["type", "text", "class", "boxes playerScore", 3, "id", "placeholder", "keyup", "blur", 4, "ngFor", "ngForOf"], ["type", "text", 1, "boxes", "playerScore", 3, "id", "placeholder", "keyup", "blur"], [1, "score-boxes", 3, "id"], [1, "error"], ["class", "player-total-score", 4, "ngIf"], [1, "player-total-score"]], template: function GolfScorecardComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, GolfScorecardComponent_mat_card_1_Template, 3, 1, "mat-card", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, GolfScorecardComponent_div_2_Template, 63, 17, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, GolfScorecardComponent_div_2_Template, 65, 17, "div", 2);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.selectedCourseName);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.players);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardTitle"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"]], styles: ["*:not(span) {\n  font-size: 16px;\n}\n\n#mat-card {\n  width: 400px;\n  text-align: center;\n}\n\n#mat-card-container {\n  display: flex;\n  justify-content: center;\n  margin-top: 20px;\n}\n\nhtml,\nbody {\n  height: 100%;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n}\n\nbutton {\n  padding: 5px 20px;\n  border-radius: 5px;\n  background-color: #c0c0c0;\n}\n\ninput[type=\"text\"]::-webkit-input-placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\ninput[type=\"text\"]::-moz-placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\ninput[type=\"text\"]::-ms-input-placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\ninput[type=\"text\"]::placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\n.container {\n  width: 100%;\n  margin-top: 50px;\n}\n\n.container .info {\n  display: flex;\n  margin-top: 50px;\n}\n\n.container .info .error-container {\n  width: 33%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px 5px;\n  height: auto;\n}\n\n.container .info .error-container .error {\n  width: 300px;\n  height: 30px;\n  background-color: red;\n  outline: darkred 3px solid;\n  text-align: center;\n  line-height: 30px;\n  margin: 10px;\n}\n\n.container .info .player-total-score-container {\n  width: 33%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px 5px;\n  height: auto;\n}\n\n.container .info .options {\n  width: 33%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px 5px;\n  height: auto;\n}\n\n.container .info .player-total-score-container .player-total-score, #saved-game-user-feedback {\n  width: 300px;\n  height: 30px;\n  background-color: limegreen;\n  outline: green 3px solid;\n  text-align: center;\n  line-height: 30px;\n  margin: 10px;\n}\n\n.container .course-selection {\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  width: 100%;\n  height: 45%;\n}\n\n.container .course-selection .course {\n  width: 180px;\n  height: 200px;\n  border: 1px solid #000000;\n  text-align: center;\n  border-radius: 5px;\n  background-color: #ffffff;\n  box-shadow: 10px 10px 31px -13px rgba(0, 0, 0, 0.75);\n  padding: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.container .course-selection .course .name {\n  margin: 5px 0;\n}\n\n.container .score-card-container {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n}\n\n.container .score-card-container * {\n  box-sizing: border-box;\n}\n\n.container .score-card-container .score-card {\n  border: 1px solid #000000;\n  width: auto;\n}\n\n.container .score-card-container .score-card .holes,\n.container .score-card-container .score-card .yardage,\n.container .score-card-container .score-card .handicap {\n  display: flex;\n  text-align: center;\n}\n\n.container .score-card-container .score-card .holes input[type=\"text\"],\n.container .score-card-container .score-card .yardage input[type=\"text\"] {\n  padding-top: 5px;\n}\n\n.container .score-card-container .score-card .holes #first-column,\n.container .score-card-container .score-card .yardage #first-column {\n  width: 200px;\n}\n\n.container .score-card-container .score-card .holes .firstColumn,\n.container .score-card-container .score-card .holes .score-boxes,\n.container .score-card-container .score-card .holes .boxes,\n.container .score-card-container .score-card .yardage .firstColumn,\n.container .score-card-container .score-card .yardage .score-boxes,\n.container .score-card-container .score-card .yardage .boxes {\n  height: 30px;\n  border: 1px solid #000000;\n  line-height: 30px;\n}\n\n.container .score-card-container .score-card .holes .firstColumn,\n.container .score-card-container .score-card .yardage .firstColumn {\n  width: 200px;\n}\n\n.container .score-card-container .score-card .holes .col,\n.container .score-card-container .score-card .holes .boxes,\n.container .score-card-container .score-card .yardage .col,\n.container .score-card-container .score-card .yardage .boxes {\n  width: 45px;\n}\n\n.container .score-card-container .score-card .holes .scores,\n.container .score-card-container .score-card .holes .score-boxes,\n.container .score-card-container .score-card .yardage .scores,\n.container .score-card-container .score-card .yardage .score-boxes {\n  width: 80px;\n}\n\n#saved-game-user-feedback {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ29sZi1nYW1lL2dvbGYtc2NvcmVjYXJkL2dvbGYtc2NvcmVjYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsZ0JBQWdCO0FBQ2xCOztBQUVBOztFQUVFLFlBQVk7RUFDWixXQUFXO0VBQ1gsVUFBVTtFQUNWLFNBQVM7QUFDWDs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUpBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUpBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUpBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUNBO0VBQ0UsV0FBVztFQUNYLGdCQUFnQjtBQUNsQjs7QUFDQTtFQUNFLGFBQWE7RUFDYixnQkFBZ0I7QUFDbEI7O0FBQ0E7RUFDRSxVQUFVO0VBQ1YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixzQkFBc0I7RUFDdEIsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFDZDs7QUFDQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1oscUJBQXFCO0VBQ3JCLDBCQUEwQjtFQUMxQixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLFlBQVk7QUFDZDs7QUFDQTtFQUNFLFVBQVU7RUFDVixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHNCQUFzQjtFQUN0QixnQkFBZ0I7RUFDaEIsWUFBWTtBQUNkOztBQUNBO0VBQ0UsVUFBVTtFQUNWLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLGdCQUFnQjtFQUNoQixZQUFZO0FBQ2Q7O0FBQ0E7RUFDRSxZQUFZO0VBQ1osWUFBWTtFQUNaLDJCQUEyQjtFQUMzQix3QkFBd0I7RUFDeEIsa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBQ0E7RUFDRSxhQUFhO0VBQ2IsNkJBQTZCO0VBQzdCLG1CQUFtQjtFQUNuQixXQUFXO0VBQ1gsV0FBVztBQUNiOztBQUNBO0VBQ0UsWUFBWTtFQUNaLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsb0RBQW9EO0VBQ3BELGFBQWE7RUFDYixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLDhCQUE4QjtBQUNoQzs7QUFDQTtFQUNFLGFBQWE7QUFDZjs7QUFDQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsdUJBQXVCO0FBQ3pCOztBQUNBO0VBQ0Usc0JBQXNCO0FBQ3hCOztBQUNBO0VBQ0UseUJBQXlCO0VBQ3pCLFdBQVc7QUFDYjs7QUFDQTs7O0VBR0UsYUFBYTtFQUNiLGtCQUFrQjtBQUNwQjs7QUFDQTs7RUFFRSxnQkFBZ0I7QUFDbEI7O0FBQ0E7O0VBRUUsWUFBWTtBQUNkOztBQUNBOzs7Ozs7RUFNRSxZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLGlCQUFpQjtBQUNuQjs7QUFDQTs7RUFFRSxZQUFZO0FBQ2Q7O0FBQ0E7Ozs7RUFJRSxXQUFXO0FBQ2I7O0FBQ0E7Ozs7RUFJRSxXQUFXO0FBQ2I7O0FBQ0E7RUFDRSxhQUFhO0FBQ2YiLCJmaWxlIjoic3JjL2FwcC9nb2xmLWdhbWUvZ29sZi1zY29yZWNhcmQvZ29sZi1zY29yZWNhcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIio6bm90KHNwYW4pIHtcbiAgZm9udC1zaXplOiAxNnB4O1xufVxuXG4jbWF0LWNhcmQge1xuICB3aWR0aDogNDAwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuI21hdC1jYXJkLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuXG5odG1sLFxuYm9keSB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMDtcbn1cblxuYnV0dG9uIHtcbiAgcGFkZGluZzogNXB4IDIwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2MwYzBjMDtcbn1cblxuaW5wdXRbdHlwZT1cInRleHRcIl06OnBsYWNlaG9sZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIiwgc2Fucy1zZXJpZjtcbiAgY29sb3I6ICMwMDAwMDA7XG59XG4uY29udGFpbmVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbi10b3A6IDUwcHg7XG59XG4uY29udGFpbmVyIC5pbmZvIHtcbiAgZGlzcGxheTogZmxleDtcbiAgbWFyZ2luLXRvcDogNTBweDtcbn1cbi5jb250YWluZXIgLmluZm8gLmVycm9yLWNvbnRhaW5lciB7XG4gIHdpZHRoOiAzMyU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIG1hcmdpbjogMjBweCA1cHg7XG4gIGhlaWdodDogYXV0bztcbn1cbi5jb250YWluZXIgLmluZm8gLmVycm9yLWNvbnRhaW5lciAuZXJyb3Ige1xuICB3aWR0aDogMzAwcHg7XG4gIGhlaWdodDogMzBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xuICBvdXRsaW5lOiBkYXJrcmVkIDNweCBzb2xpZDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBsaW5lLWhlaWdodDogMzBweDtcbiAgbWFyZ2luOiAxMHB4O1xufVxuLmNvbnRhaW5lciAuaW5mbyAucGxheWVyLXRvdGFsLXNjb3JlLWNvbnRhaW5lciB7XG4gIHdpZHRoOiAzMyU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIG1hcmdpbjogMjBweCA1cHg7XG4gIGhlaWdodDogYXV0bztcbn1cbi5jb250YWluZXIgLmluZm8gLm9wdGlvbnMge1xuICB3aWR0aDogMzMlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBtYXJnaW46IDIwcHggNXB4O1xuICBoZWlnaHQ6IGF1dG87XG59XG4uY29udGFpbmVyIC5pbmZvIC5wbGF5ZXItdG90YWwtc2NvcmUtY29udGFpbmVyIC5wbGF5ZXItdG90YWwtc2NvcmUsICNzYXZlZC1nYW1lLXVzZXItZmVlZGJhY2sge1xuICB3aWR0aDogMzAwcHg7XG4gIGhlaWdodDogMzBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogbGltZWdyZWVuO1xuICBvdXRsaW5lOiBncmVlbiAzcHggc29saWQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbGluZS1oZWlnaHQ6IDMwcHg7XG4gIG1hcmdpbjogMTBweDtcbn1cbi5jb250YWluZXIgLmNvdXJzZS1zZWxlY3Rpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDUlO1xufVxuLmNvbnRhaW5lciAuY291cnNlLXNlbGVjdGlvbiAuY291cnNlIHtcbiAgd2lkdGg6IDE4MHB4O1xuICBoZWlnaHQ6IDIwMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMDAwMDAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgYm94LXNoYWRvdzogMTBweCAxMHB4IDMxcHggLTEzcHggcmdiYSgwLCAwLCAwLCAwLjc1KTtcbiAgcGFkZGluZzogMTBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuLmNvbnRhaW5lciAuY291cnNlLXNlbGVjdGlvbiAuY291cnNlIC5uYW1lIHtcbiAgbWFyZ2luOiA1cHggMDtcbn1cbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgKiB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICMwMDAwMDA7XG4gIHdpZHRoOiBhdXRvO1xufVxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLnlhcmRhZ2UsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaGFuZGljYXAge1xuICBkaXNwbGF5OiBmbGV4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaG9sZXMgaW5wdXRbdHlwZT1cInRleHRcIl0sXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSBpbnB1dFt0eXBlPVwidGV4dFwiXSB7XG4gIHBhZGRpbmctdG9wOiA1cHg7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaG9sZXMgI2ZpcnN0LWNvbHVtbixcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlICNmaXJzdC1jb2x1bW4ge1xuICB3aWR0aDogMjAwcHg7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaG9sZXMgLmZpcnN0Q29sdW1uLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5zY29yZS1ib3hlcyxcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC5ob2xlcyAuYm94ZXMsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuZmlyc3RDb2x1bW4sXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuc2NvcmUtYm94ZXMsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuYm94ZXMge1xuICBoZWlnaHQ6IDMwcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICMwMDAwMDA7XG4gIGxpbmUtaGVpZ2h0OiAzMHB4O1xufVxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5maXJzdENvbHVtbixcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlIC5maXJzdENvbHVtbiB7XG4gIHdpZHRoOiAyMDBweDtcbn1cbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC5ob2xlcyAuY29sLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5ib3hlcyxcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlIC5jb2wsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuYm94ZXMge1xuICB3aWR0aDogNDVweDtcbn1cbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC5ob2xlcyAuc2NvcmVzLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5zY29yZS1ib3hlcyxcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlIC5zY29yZXMsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuc2NvcmUtYm94ZXMge1xuICB3aWR0aDogODBweDtcbn1cbiNzYXZlZC1nYW1lLXVzZXItZmVlZGJhY2sge1xuICBkaXNwbGF5OiBub25lO1xufSJdfQ== */"], encapsulation: 2 });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardTitle"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"]], pipes: [_pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_6__["DuplicateNamePipe"]], styles: ["*:not(span) {\n  font-size: 16px;\n}\n\n#mat-card {\n  width: 400px;\n  text-align: center;\n}\n\n#mat-card-container {\n  display: flex;\n  justify-content: center;\n  margin-top: 20px;\n}\n\nhtml,\nbody {\n  height: 100%;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n}\n\nbutton {\n  padding: 5px 20px;\n  border-radius: 5px;\n  background-color: #c0c0c0;\n}\n\ninput[type=\"text\"]::-webkit-input-placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\ninput[type=\"text\"]::-moz-placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\ninput[type=\"text\"]::-ms-input-placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\ninput[type=\"text\"]::placeholder {\n  text-align: center;\n  font-family: \"Roboto\", sans-serif;\n  color: #000000;\n}\n\n.container {\n  width: 100%;\n  margin-top: 50px;\n}\n\n.container .info {\n  display: flex;\n  margin-top: 50px;\n}\n\n.container .info .error-container {\n  width: 33%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px 5px;\n  height: auto;\n}\n\n.container .info .error-container .error {\n  width: 300px;\n  height: 30px;\n  background-color: red;\n  outline: darkred 3px solid;\n  text-align: center;\n  line-height: 30px;\n  margin: 10px;\n}\n\n.container .info .player-total-score-container {\n  width: 33%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px 5px;\n  height: auto;\n}\n\n.container .info .options {\n  width: 33%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px 5px;\n  height: auto;\n}\n\n.container .info .player-total-score-container .player-total-score, #saved-game-user-feedback {\n  width: 300px;\n  height: 30px;\n  background-color: limegreen;\n  outline: green 3px solid;\n  text-align: center;\n  line-height: 30px;\n  margin: 10px;\n}\n\n.container .course-selection {\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  width: 100%;\n  height: 45%;\n}\n\n.container .course-selection .course {\n  width: 180px;\n  height: 200px;\n  border: 1px solid #000000;\n  text-align: center;\n  border-radius: 5px;\n  background-color: #ffffff;\n  box-shadow: 10px 10px 31px -13px rgba(0, 0, 0, 0.75);\n  padding: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.container .course-selection .course .name {\n  margin: 5px 0;\n}\n\n.container .score-card-container {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n}\n\n.container .score-card-container * {\n  box-sizing: border-box;\n}\n\n.container .score-card-container .score-card {\n  border: 1px solid #000000;\n  width: auto;\n}\n\n.container .score-card-container .score-card .holes,\n.container .score-card-container .score-card .yardage,\n.container .score-card-container .score-card .handicap {\n  display: flex;\n  text-align: center;\n}\n\n.container .score-card-container .score-card .holes input[type=\"text\"],\n.container .score-card-container .score-card .yardage input[type=\"text\"] {\n  padding-top: 5px;\n}\n\n.container .score-card-container .score-card .holes #first-column,\n.container .score-card-container .score-card .yardage #first-column {\n  width: 200px;\n}\n\n.container .score-card-container .score-card .holes .firstColumn,\n.container .score-card-container .score-card .holes .score-boxes,\n.container .score-card-container .score-card .holes .boxes,\n.container .score-card-container .score-card .yardage .firstColumn,\n.container .score-card-container .score-card .yardage .score-boxes,\n.container .score-card-container .score-card .yardage .boxes {\n  height: 30px;\n  border: 1px solid #000000;\n  line-height: 30px;\n}\n\n.container .score-card-container .score-card .holes .firstColumn,\n.container .score-card-container .score-card .yardage .firstColumn {\n  width: 200px;\n}\n\n.container .score-card-container .score-card .holes .col,\n.container .score-card-container .score-card .holes .boxes,\n.container .score-card-container .score-card .yardage .col,\n.container .score-card-container .score-card .yardage .boxes {\n  width: 45px;\n}\n\n.container .score-card-container .score-card .holes .scores,\n.container .score-card-container .score-card .holes .score-boxes,\n.container .score-card-container .score-card .yardage .scores,\n.container .score-card-container .score-card .yardage .score-boxes {\n  width: 80px;\n}\n\n#saved-game-user-feedback {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ29sZi1nYW1lL2dvbGYtc2NvcmVjYXJkL2dvbGYtc2NvcmVjYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsZ0JBQWdCO0FBQ2xCOztBQUVBOztFQUVFLFlBQVk7RUFDWixXQUFXO0VBQ1gsVUFBVTtFQUNWLFNBQVM7QUFDWDs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUpBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUpBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUpBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlDQUFpQztFQUNqQyxjQUFjO0FBQ2hCOztBQUNBO0VBQ0UsV0FBVztFQUNYLGdCQUFnQjtBQUNsQjs7QUFDQTtFQUNFLGFBQWE7RUFDYixnQkFBZ0I7QUFDbEI7O0FBQ0E7RUFDRSxVQUFVO0VBQ1YsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixzQkFBc0I7RUFDdEIsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFDZDs7QUFDQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1oscUJBQXFCO0VBQ3JCLDBCQUEwQjtFQUMxQixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLFlBQVk7QUFDZDs7QUFDQTtFQUNFLFVBQVU7RUFDVixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHNCQUFzQjtFQUN0QixnQkFBZ0I7RUFDaEIsWUFBWTtBQUNkOztBQUNBO0VBQ0UsVUFBVTtFQUNWLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLGdCQUFnQjtFQUNoQixZQUFZO0FBQ2Q7O0FBQ0E7RUFDRSxZQUFZO0VBQ1osWUFBWTtFQUNaLDJCQUEyQjtFQUMzQix3QkFBd0I7RUFDeEIsa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBQ0E7RUFDRSxhQUFhO0VBQ2IsNkJBQTZCO0VBQzdCLG1CQUFtQjtFQUNuQixXQUFXO0VBQ1gsV0FBVztBQUNiOztBQUNBO0VBQ0UsWUFBWTtFQUNaLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsb0RBQW9EO0VBQ3BELGFBQWE7RUFDYixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLDhCQUE4QjtBQUNoQzs7QUFDQTtFQUNFLGFBQWE7QUFDZjs7QUFDQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsdUJBQXVCO0FBQ3pCOztBQUNBO0VBQ0Usc0JBQXNCO0FBQ3hCOztBQUNBO0VBQ0UseUJBQXlCO0VBQ3pCLFdBQVc7QUFDYjs7QUFDQTs7O0VBR0UsYUFBYTtFQUNiLGtCQUFrQjtBQUNwQjs7QUFDQTs7RUFFRSxnQkFBZ0I7QUFDbEI7O0FBQ0E7O0VBRUUsWUFBWTtBQUNkOztBQUNBOzs7Ozs7RUFNRSxZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLGlCQUFpQjtBQUNuQjs7QUFDQTs7RUFFRSxZQUFZO0FBQ2Q7O0FBQ0E7Ozs7RUFJRSxXQUFXO0FBQ2I7O0FBQ0E7Ozs7RUFJRSxXQUFXO0FBQ2I7O0FBQ0E7RUFDRSxhQUFhO0FBQ2YiLCJmaWxlIjoic3JjL2FwcC9nb2xmLWdhbWUvZ29sZi1zY29yZWNhcmQvZ29sZi1zY29yZWNhcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIio6bm90KHNwYW4pIHtcbiAgZm9udC1zaXplOiAxNnB4O1xufVxuXG4jbWF0LWNhcmQge1xuICB3aWR0aDogNDAwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuI21hdC1jYXJkLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuXG5odG1sLFxuYm9keSB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMDtcbn1cblxuYnV0dG9uIHtcbiAgcGFkZGluZzogNXB4IDIwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2MwYzBjMDtcbn1cblxuaW5wdXRbdHlwZT1cInRleHRcIl06OnBsYWNlaG9sZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIiwgc2Fucy1zZXJpZjtcbiAgY29sb3I6ICMwMDAwMDA7XG59XG4uY29udGFpbmVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbi10b3A6IDUwcHg7XG59XG4uY29udGFpbmVyIC5pbmZvIHtcbiAgZGlzcGxheTogZmxleDtcbiAgbWFyZ2luLXRvcDogNTBweDtcbn1cbi5jb250YWluZXIgLmluZm8gLmVycm9yLWNvbnRhaW5lciB7XG4gIHdpZHRoOiAzMyU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIG1hcmdpbjogMjBweCA1cHg7XG4gIGhlaWdodDogYXV0bztcbn1cbi5jb250YWluZXIgLmluZm8gLmVycm9yLWNvbnRhaW5lciAuZXJyb3Ige1xuICB3aWR0aDogMzAwcHg7XG4gIGhlaWdodDogMzBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xuICBvdXRsaW5lOiBkYXJrcmVkIDNweCBzb2xpZDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBsaW5lLWhlaWdodDogMzBweDtcbiAgbWFyZ2luOiAxMHB4O1xufVxuLmNvbnRhaW5lciAuaW5mbyAucGxheWVyLXRvdGFsLXNjb3JlLWNvbnRhaW5lciB7XG4gIHdpZHRoOiAzMyU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIG1hcmdpbjogMjBweCA1cHg7XG4gIGhlaWdodDogYXV0bztcbn1cbi5jb250YWluZXIgLmluZm8gLm9wdGlvbnMge1xuICB3aWR0aDogMzMlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBtYXJnaW46IDIwcHggNXB4O1xuICBoZWlnaHQ6IGF1dG87XG59XG4uY29udGFpbmVyIC5pbmZvIC5wbGF5ZXItdG90YWwtc2NvcmUtY29udGFpbmVyIC5wbGF5ZXItdG90YWwtc2NvcmUsICNzYXZlZC1nYW1lLXVzZXItZmVlZGJhY2sge1xuICB3aWR0aDogMzAwcHg7XG4gIGhlaWdodDogMzBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogbGltZWdyZWVuO1xuICBvdXRsaW5lOiBncmVlbiAzcHggc29saWQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbGluZS1oZWlnaHQ6IDMwcHg7XG4gIG1hcmdpbjogMTBweDtcbn1cbi5jb250YWluZXIgLmNvdXJzZS1zZWxlY3Rpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDUlO1xufVxuLmNvbnRhaW5lciAuY291cnNlLXNlbGVjdGlvbiAuY291cnNlIHtcbiAgd2lkdGg6IDE4MHB4O1xuICBoZWlnaHQ6IDIwMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMDAwMDAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgYm94LXNoYWRvdzogMTBweCAxMHB4IDMxcHggLTEzcHggcmdiYSgwLCAwLCAwLCAwLjc1KTtcbiAgcGFkZGluZzogMTBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuLmNvbnRhaW5lciAuY291cnNlLXNlbGVjdGlvbiAuY291cnNlIC5uYW1lIHtcbiAgbWFyZ2luOiA1cHggMDtcbn1cbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgKiB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICMwMDAwMDA7XG4gIHdpZHRoOiBhdXRvO1xufVxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLnlhcmRhZ2UsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaGFuZGljYXAge1xuICBkaXNwbGF5OiBmbGV4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaG9sZXMgaW5wdXRbdHlwZT1cInRleHRcIl0sXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSBpbnB1dFt0eXBlPVwidGV4dFwiXSB7XG4gIHBhZGRpbmctdG9wOiA1cHg7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaG9sZXMgI2ZpcnN0LWNvbHVtbixcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlICNmaXJzdC1jb2x1bW4ge1xuICB3aWR0aDogMjAwcHg7XG59XG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAuaG9sZXMgLmZpcnN0Q29sdW1uLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5zY29yZS1ib3hlcyxcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC5ob2xlcyAuYm94ZXMsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuZmlyc3RDb2x1bW4sXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuc2NvcmUtYm94ZXMsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuYm94ZXMge1xuICBoZWlnaHQ6IDMwcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICMwMDAwMDA7XG4gIGxpbmUtaGVpZ2h0OiAzMHB4O1xufVxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5maXJzdENvbHVtbixcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlIC5maXJzdENvbHVtbiB7XG4gIHdpZHRoOiAyMDBweDtcbn1cbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC5ob2xlcyAuY29sLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5ib3hlcyxcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlIC5jb2wsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuYm94ZXMge1xuICB3aWR0aDogNDVweDtcbn1cbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC5ob2xlcyAuc2NvcmVzLFxuLmNvbnRhaW5lciAuc2NvcmUtY2FyZC1jb250YWluZXIgLnNjb3JlLWNhcmQgLmhvbGVzIC5zY29yZS1ib3hlcyxcbi5jb250YWluZXIgLnNjb3JlLWNhcmQtY29udGFpbmVyIC5zY29yZS1jYXJkIC55YXJkYWdlIC5zY29yZXMsXG4uY29udGFpbmVyIC5zY29yZS1jYXJkLWNvbnRhaW5lciAuc2NvcmUtY2FyZCAueWFyZGFnZSAuc2NvcmUtYm94ZXMge1xuICB3aWR0aDogODBweDtcbn1cbiNzYXZlZC1nYW1lLXVzZXItZmVlZGJhY2sge1xuICBkaXNwbGF5OiBub25lO1xufSJdfQ== */"], encapsulation: 2 });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](GolfScorecardComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
                 selector: "app-golf-scorecard",
                 templateUrl: "./golf-scorecard.component.html",
                 styleUrls: ["./golf-scorecard.component.css"],
-                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None
             }]
-    }], function () { return [{ type: _golf_service__WEBPACK_IMPORTED_MODULE_1__["GolfService"] }, { type: src_app_pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_2__["DuplicateNamePipe"] }]; }, null); })();
+    }], function () { return [{ type: _golf_service__WEBPACK_IMPORTED_MODULE_1__["GolfService"] }]; }, { form: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: ['form']
+        }] }); })();
 
 
 /***/ }),
@@ -1028,6 +1154,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/divider */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/divider.js");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../pipes/duplicate-name.pipe */ "./src/app/pipes/duplicate-name.pipe.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
 
 
 
@@ -1059,17 +1187,20 @@ GolfModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
             _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"],
             _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_12__["MatProgressSpinnerModule"],
             _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__["MatDividerModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_16__["FormsModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](GolfModule, { declarations: [_course_selection_course_selection_component__WEBPACK_IMPORTED_MODULE_2__["CourseSelectionComponent"],
         _amount_of_users_selection_amount_of_users_selection_component__WEBPACK_IMPORTED_MODULE_3__["AmountOfUsersSelectionComponent"],
         _golf_scorecard_golf_scorecard_component__WEBPACK_IMPORTED_MODULE_4__["GolfScorecardComponent"],
-        _tee_selection_tee_selection_component__WEBPACK_IMPORTED_MODULE_5__["TeeSelectionComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _tee_selection_tee_selection_component__WEBPACK_IMPORTED_MODULE_5__["TeeSelectionComponent"],
+        _pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_15__["DuplicateNamePipe"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
         _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
         _angular_material_select__WEBPACK_IMPORTED_MODULE_8__["MatSelectModule"],
         _shared_shared_module__WEBPACK_IMPORTED_MODULE_9__["SharedModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"],
         _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_12__["MatProgressSpinnerModule"],
-        _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__["MatDividerModule"]] }); })();
+        _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__["MatDividerModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_16__["FormsModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](GolfModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -1077,7 +1208,8 @@ GolfModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
                     _course_selection_course_selection_component__WEBPACK_IMPORTED_MODULE_2__["CourseSelectionComponent"],
                     _amount_of_users_selection_amount_of_users_selection_component__WEBPACK_IMPORTED_MODULE_3__["AmountOfUsersSelectionComponent"],
                     _golf_scorecard_golf_scorecard_component__WEBPACK_IMPORTED_MODULE_4__["GolfScorecardComponent"],
-                    _tee_selection_tee_selection_component__WEBPACK_IMPORTED_MODULE_5__["TeeSelectionComponent"]
+                    _tee_selection_tee_selection_component__WEBPACK_IMPORTED_MODULE_5__["TeeSelectionComponent"],
+                    _pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_15__["DuplicateNamePipe"]
                 ],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
@@ -1089,6 +1221,7 @@ GolfModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
                     _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"],
                     _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_12__["MatProgressSpinnerModule"],
                     _angular_material_divider__WEBPACK_IMPORTED_MODULE_13__["MatDividerModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_16__["FormsModule"]
                 ],
                 providers: [_pipes_duplicate_name_pipe__WEBPACK_IMPORTED_MODULE_15__["DuplicateNamePipe"]]
             }]
@@ -1207,14 +1340,14 @@ function TeeSelectionComponent_div_0_mat_option_8_Template(rf, ctx) { if (rf & 1
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const option_r49 = ctx.$implicit;
-    const i_r50 = ctx.index;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", i_r50);
+    const option_r50 = ctx.$implicit;
+    const i_r51 = ctx.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", i_r51);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](option_r49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](option_r50);
 } }
 function TeeSelectionComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r53 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card", 2);
@@ -1223,23 +1356,23 @@ function TeeSelectionComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-form-field");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-select", 3, 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function TeeSelectionComponent_div_0_Template_mat_select_selectionChange_6_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52); const ctx_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r51.onSelectChange(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function TeeSelectionComponent_div_0_Template_mat_select_selectionChange_6_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r53); const ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r52.onSelectChange(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, TeeSelectionComponent_div_0_mat_option_8_Template, 2, 2, "mat-option", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TeeSelectionComponent_div_0_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52); const _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7); const ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r53.goToScorecard(_r47.value); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TeeSelectionComponent_div_0_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r53); const _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7); const ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r54.goToScorecard(_r48.value); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Generate Golf Scorecard");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r46.teeOptions);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r47.teeOptions);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r46.valueNotSelected);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r47.valueNotSelected);
 } }
 class TeeSelectionComponent {
     constructor(router, golfService) {
@@ -1395,11 +1528,31 @@ NavBarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DuplicateNamePipe", function() { return DuplicateNamePipe; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _app_data_names__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app-data/names */ "./src/app/app-data/names.ts");
+
 
 
 class DuplicateNamePipe {
-    transform(value, args) {
-        return args.some(name => name === value);
+    transform(value, players, playerIndex) {
+        let check = false;
+        let name = value;
+        const playerNames = players.map(player => player.name);
+        while (!check) {
+            if (playerNames.some((n, i) => {
+                if (i !== playerIndex) {
+                    return name === n;
+                }
+                else {
+                    return false;
+                }
+            })) {
+                name = _app_data_names__WEBPACK_IMPORTED_MODULE_1__["names"][Math.floor(Math.random() * 99)];
+            }
+            else {
+                check = true;
+            }
+        }
+        return name;
     }
 }
 DuplicateNamePipe.ɵfac = function DuplicateNamePipe_Factory(t) { return new (t || DuplicateNamePipe)(); };

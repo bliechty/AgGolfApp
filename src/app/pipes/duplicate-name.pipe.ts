@@ -7,7 +7,6 @@ import { names } from '../app-data/names';
 })
 export class DuplicateNamePipe implements PipeTransform {
   transform(value: string, players: Player[], playerIndex: number): string {
-    console.log("here");
     let check = false;
     let name = value;
     const playerNames = players.map(player => player.name);
