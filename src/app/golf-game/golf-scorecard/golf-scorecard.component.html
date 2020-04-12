@@ -15,9 +15,9 @@
                 *ngFor="let i of a3"
                 type="text"
                 class="firstColumn playerName"
-                [placeholder]="players[i - 1].name | duplicateName:players:i - 1"
+                [placeholder]="players[i - 1].name | duplicateName:playerNames:i - 1"
                 (blur)="loseFocus($event)"
-                (keyup)="enterPlayerName($event, i - 1)"
+                (keyup.enter)="enterPlayerName($event, i - 1);"
               >
               </form>
               <div class="firstColumn">Par</div>

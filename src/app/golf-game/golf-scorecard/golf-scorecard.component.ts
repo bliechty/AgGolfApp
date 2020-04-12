@@ -53,6 +53,8 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
 
   @ViewChild('form') form: ElementRef;
 
+  playerNames: string[] = [];
+
   constructor(
     private golfService: GolfService
   ) {}
@@ -75,6 +77,7 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
           .getPlayerData()
           .subscribe((players) => {
             this.players = this.sanitizeScores(players);
+            this.playerNames = this.players.map(player => player.name);
             $(document).ready(() => {
               for (let i of this.a3) {
                 this.isFinished(i - 1);
@@ -184,17 +187,15 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
     const value = $event.target.value;
     this.error = false;
     this.errorMessage = "";
-    if ($event.key === "Enter") {
-      if (value === "") {
-        this.error = true;
-        this.errorMessage = "Name cannot be empty";
-      } else {
-        this.players[playerIndex].name = value;
-        $event.target.placeholder = value;
-        this.isFinished(playerIndex);
-      }
-      $event.target.value = "";
+    if (value === "") {
+      this.error = true;
+      this.errorMessage = "Name cannot be empty";
+    } else {
+      this.players[playerIndex].name = value;
+      $event.target.placeholder = value;
+      this.isFinished(playerIndex);
     }
+    $event.target.value = "";
   }
 
   isFinished(playerIndex) {
@@ -240,7 +241,7 @@ export class GolfScorecardComponent implements OnInit, OnDestroy {
     this.golfService.writeToPlayerData(this.players.map((player, i) => {
       return {
         ...player,
-        name: this.form.nativeElement.elements[i].placeholder
+        name: this.playerNames[i]
       }
     }), true).then((_) => {
       $("#saved-game-user-feedback").css("display", "inline");

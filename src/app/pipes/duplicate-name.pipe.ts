@@ -1,15 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Player } from '../interfaces/player';
 import { names } from '../app-data/names';
 
 @Pipe({
   name: 'duplicateName'
 })
 export class DuplicateNamePipe implements PipeTransform {
-  transform(value: string, players: Player[], playerIndex: number): string {
+  transform(value: string, playerNames: string[], playerIndex: number): string {
     let check = false;
     let name = value;
-    const playerNames = players.map(player => player.name);
     
     while (!check) {
       if (playerNames.some((n, i) => {
@@ -24,6 +22,8 @@ export class DuplicateNamePipe implements PipeTransform {
         check = true;
       }
     }
+
+    playerNames[playerIndex] = name;
 
     return name;
   }
