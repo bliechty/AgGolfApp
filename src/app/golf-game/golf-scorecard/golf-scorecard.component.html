@@ -12,13 +12,13 @@
               <div class="firstColumn">Hole</div>
               <form #form>
                 <input
-                *ngFor="let i of a3"
-                type="text"
-                class="firstColumn playerName"
-                [placeholder]="players[i - 1].name | duplicateName:playerNames:i - 1"
-                (blur)="loseFocus($event)"
-                (keyup.enter)="enterPlayerName($event, i - 1);"
-              >
+                  *ngFor="let i of a3"
+                  type="text"
+                  class="firstColumn playerName"
+                  [placeholder]="players[i - 1].name | duplicateName:playerNames:i - 1"
+                  (blur)="loseFocus($event)"
+                  (keyup.enter)="enterPlayerName($event, i - 1);"
+                >
               </form>
               <div class="firstColumn">Par</div>
               <div class="firstColumn">Handicap</div>
